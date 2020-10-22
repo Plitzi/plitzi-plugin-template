@@ -25,7 +25,7 @@ const build = (env, args) => {
   const onlyAnalyze = args.onlyAnalyze || false;
 
   const modules = {
-    entry: { ...entry },
+    entry: { ...entry, All: './src/index.js' },
     output: {
       path: DESTINATION,
       filename: 'plitzi-plugin-[name].js',
