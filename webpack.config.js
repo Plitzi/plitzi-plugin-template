@@ -5,10 +5,19 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
+const glob = require('glob');
 
 const PACKAGE = require('./package.json');
 
 const DESTINATION = path.resolve(__dirname, './dist/');
+
+const entry = glob.sync('./src/components/**/**/index.js').reduce((acc, value) => {
+  const valueArr = value.split('/');
+  const elementName = valueArr[valueArr.length - 2];
+  acc[elementName] = value;
+
+  return acc;
+}, {});
 
 const build = (env, args) => {
   const devMode = args.mode !== 'production';
@@ -16,23 +25,16 @@ const build = (env, args) => {
   const onlyAnalyze = args.onlyAnalyze || false;
 
   const modules = {
-    entry: { 'plitzi-plugin-template': './src/index.js' },
+    entry: { ...entry },
     output: {
       path: DESTINATION,
-      filename: '[name].js',
+      filename: 'plitzi-plugin-[name].js',
       chunkFilename: '[name].extras.js',
-      library: 'PlitziPluginTemplate',
+      library: 'PlitziPlugin[name]',
       libraryTarget: 'umd',
       globalObject: "(typeof self !== 'undefined' ? self : this)"
     },
     externals: {
-      '@plitzi/plitzi-element': {
-        root: 'PlitziElement',
-        commonjs2: '@plitzi/plitzi-element',
-        commonjs: '@plitzi/plitzi-element',
-        amd: '@plitzi/plitzi-element',
-        umd: '@plitzi/plitzi-element'
-      },
       react: {
         root: 'React',
         commonjs2: 'react',
@@ -99,7 +101,7 @@ const build = (env, args) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].css'
+        filename: 'plitzi-plugin-[name].css'
       }),
       new WebpackAssetsManifest({
         integrity: true,
