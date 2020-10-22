@@ -1335,23 +1335,18 @@
     replace-string "^3.0.0"
     resize-observer-polyfill "^1.5.1"
 
-"@plitzi/plitzi-element@^0.1.3":
-  version "0.1.3"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.3/d92a33ad587152714bb3f14abad325880c408e0405d26e54dc4802bd4ca57cb8#76b828de37d7db86b5c3086ac94036f731d93ca2"
-  integrity sha512-LqpiCsturbdtzP2r6xE2yHD7OgmAEn1K2Nd678xTnW5FkQgva0NveSPfwKzjMCVWAYFt10dVAUJjw8WDr9no/w==
+"@plitzi/plitzi-element@^0.1.7":
+  version "0.1.7"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.7/2582e84b29818345a6ddc060a328ce1aee4fe3daf7a849a871a6d03531e16862#e7a517a1a75a0e4a3754df535fefd738afb0ed19"
+  integrity sha512-8K3ekq3wH4pe4kIuEPIF04SCtvdj+HkW0fYvQNw7m02VVqSFpaFv66TDECkawgON53LT0ef2ZngpRv3BdWVwQg==
   dependencies:
     classnames "^2.2.6"
     lodash "^4.17.15"
-    paths-js "^0.4.10"
-    placeholder-loading "^0.2.5"
     react "^17.0.0"
     react-dom "^17.0.0"
     react-redux "^7.2.1"
-    recompose "^0.30.0"
     redux "^4.0.5"
     redux-thunk "^2.3.0"
-    replace-string "^3.0.0"
-    resize-observer-polyfill "^1.5.1"
 
 "@plitzi/plitzi-sdk@^0.1.0":
   version "0.1.0"

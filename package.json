@@ -14,7 +14,7 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-element": "^0.1.3",
+    "@plitzi/plitzi-element": "^0.1.7",
     "lodash": "^4.17.15",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -23,7 +23,7 @@
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.3",
+    "@plitzi/plitzi-element": "^0.1.7",
     "react": "^16.13.1",
     "react-dom": "^17.0.0",
     "react-redux": "^7.2.1"
