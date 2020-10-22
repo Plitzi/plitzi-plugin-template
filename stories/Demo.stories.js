@@ -1,7 +1,7 @@
 import React from 'react';
 import PlitziSdk from '@plitzi/plitzi-sdk';
 
-import Demo from '../src/components/advanced/Demo/Demo';
+import Demo from '../src/components/Demo/Demo';
 
 export default {
   title: 'Example/Demo',
@@ -48,7 +48,7 @@ const schema = {
   pages: ['5f544375ced80ed16f382b7b']
 };
 
-export const withHoc = () => (
+export const simpleDemoComponent = () => (
   <PlitziSdk schema={schema}>
     <PlitziSdk.override renderType="demo" component={Demo} />
   </PlitziSdk>

@@ -107,7 +107,7 @@ const build = (env, args) => {
         sortManifest: false,
         assets: {
           accessGroup: ['auser'],
-          author: 'Carlos Rodriguez <crodriguez@transformd.com>',
+          author: 'Carlos Rodriguez <crodriguez@plitzi.com>',
           created: '',
           updated: '',
           widgetArea: 'main',
