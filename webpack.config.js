@@ -23,6 +23,7 @@ const build = (env, args) => {
   const devMode = args.mode !== 'production';
   const onlyGzip = args.onlyGzip || false;
   const onlyAnalyze = args.onlyAnalyze || false;
+  const watchMode = args.watchMode || false;
 
   const modules = {
     entry: { ...entry, All: './src/index.js' },
@@ -34,6 +35,7 @@ const build = (env, args) => {
       libraryTarget: 'umd',
       globalObject: "(typeof self !== 'undefined' ? self : this)"
     },
+    watch: watchMode,
     externals: {
       react: {
         root: 'React',

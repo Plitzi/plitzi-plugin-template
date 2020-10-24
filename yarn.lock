@@ -1317,28 +1317,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@plitzi/plitzi-element@^0.1.0":
-  version "0.1.1"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.1/ed73064d601ab1a5aacdf7d00bcdb2c9ae38b4e1b84de5b1545a1d4a3b70b35b#d47f63ed9cee6ed577d5617d9074e3a3439aeddc"
-  integrity sha512-QXtSnMP8s1LT4stSrdRpYSMh7snvw53sjViH7Eyz0XZ2ssSsDPuKWB60y7aM9/wyyQY9tu4RshOue69tO+sQ5g==
-  dependencies:
-    classnames "^2.2.6"
-    lodash "^4.17.15"
-    paths-js "^0.4.10"
-    placeholder-loading "^0.2.5"
-    react "^17.0.0-rc.3"
-    react-dom "^17.0.0-rc.3"
-    react-redux "^7.2.1"
-    recompose "^0.30.0"
-    redux "^4.0.5"
-    redux-thunk "^2.3.0"
-    replace-string "^3.0.0"
-    resize-observer-polyfill "^1.5.1"
-
-"@plitzi/plitzi-element@^0.1.7":
-  version "0.1.7"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.7/2582e84b29818345a6ddc060a328ce1aee4fe3daf7a849a871a6d03531e16862#e7a517a1a75a0e4a3754df535fefd738afb0ed19"
-  integrity sha512-8K3ekq3wH4pe4kIuEPIF04SCtvdj+HkW0fYvQNw7m02VVqSFpaFv66TDECkawgON53LT0ef2ZngpRv3BdWVwQg==
+"@plitzi/plitzi-element@^0.1.9":
+  version "0.1.9"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.9/4e9527426561364bb576bc4b95ecadbb582e333623bccd7149cf38334f44074b#e54152cf8dee86cbcf0ca2b8598392e91276b94e"
+  integrity sha512-SUDK2udl24iXFDoVLRVx4BTq+cIQJztPgCLwaKFKlCIaZ+yrPSIx7dLvTdYZuLr8xbNum09ORFJfM6Q1Dn0T7Q==
   dependencies:
     classnames "^2.2.6"
     lodash "^4.17.15"
@@ -1348,28 +1330,24 @@
     redux "^4.0.5"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-sdk@^0.1.0":
-  version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.1.0/654f56eeaec9dffc1db41d6399d985be9ab702c1f78f2c25a23e851ba90b71e1#9428f7748ebd8675a44275e8b4e4e933f9f66703"
-  integrity sha512-dJh5llS4DW1+MZ+98ZL8y5Vq3pIYi668ej6fA6Y4DFFU+/wU/vgemHN22GDH2c+ZXI0/5PYq79YcyBleLPxWxw==
+"@plitzi/plitzi-sdk@^0.1.12":
+  version "0.1.12"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.1.12/2f31110a1529e798999c4c0cea943a6916f22a1321c3cb782fd29f90a3306040#c8f99033e57a257e5c2fb1bf3adb795ea295be6f"
+  integrity sha512-InQhWuz3QfKGFzV1NnHYDQ22G5NwK3hwuV1bKlbAvIA4BZNbUlwmcc93D6Ehe4DiLzGXKl3PQTGMLNselpW/cw==
   dependencies:
-    "@plitzi/plitzi-element" "^0.1.0"
+    "@plitzi/plitzi-element" "^0.1.9"
     axios "^0.19.0"
     classnames "^2.2.6"
     lodash "^4.17.15"
-    paths-js "^0.4.10"
-    react "^17.0.0-rc.3"
+    react "^17.0.1"
     react-color "^2.18.1"
     react-content-loader "^4.3.4"
     react-dev-utils-custom-hmr "^3.1.0"
-    react-dom "^17.0.0-rc.3"
+    react-dom "^17.0.1"
     react-redux "^7.2.1"
     react-router-dom "^5.1.2"
-    recompose "^0.30.0"
     redux "^4.0.5"
     redux-thunk "^2.3.0"
-    replace-string "^3.0.0"
-    resize-observer-polyfill "^1.5.1"
 
 "@reach/router@^1.3.3":
   version "1.3.4"
@@ -9397,11 +9375,6 @@ path-type@^4.0.0:
   resolved "https://npm.registry.formatic.com.au/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-paths-js@^0.4.10:
-  version "0.4.11"
-  resolved "https://npm.registry.formatic.com.au/paths-js/-/paths-js-0.4.11.tgz#b2a9d5f94ee9949aa8fee945f78a12abff44599e"
-  integrity sha512-3mqcLomDBXOo7Fo+UlaenG6f71bk1ZezPQy2JCmYHy2W2k5VKpP+Jbin9H0bjXynelTbglCqdFhSEkeIkKTYUA==
-
 pbkdf2@^3.0.3:
   version "3.1.1"
   resolved "https://npm.registry.formatic.com.au/pbkdf2/-/pbkdf2-3.1.1.tgz#cb8724b0fada984596856d1a6ebafd3584654b94"
@@ -9484,11 +9457,6 @@ pkg-up@3.1.0, pkg-up@^3.1.0:
   integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
   dependencies:
     find-up "^3.0.0"
-
-placeholder-loading@^0.2.5:
-  version "0.2.6"
-  resolved "https://npm.registry.formatic.com.au/placeholder-loading/-/placeholder-loading-0.2.6.tgz#6c34c12397785b74c7f8473c9d6d788cc4a97612"
-  integrity sha512-5h/8xiTzhVBwtj9aZWN3SMK+bjjXT+UvV5q8FZQ5Gn5VFBrEefBzSc+s/SuepToSpbMQf2SeiOrMhKYGhZaGAA==
 
 pnp-webpack-plugin@1.6.4, pnp-webpack-plugin@^1.6.4:
   version "1.6.4"
@@ -10030,14 +9998,14 @@ react-dom@^17.0.0:
     object-assign "^4.1.1"
     scheduler "^0.20.0"
 
-react-dom@^17.0.0-rc.3:
-  version "17.0.0-rc.3"
-  resolved "https://npm.registry.formatic.com.au/react-dom/-/react-dom-17.0.0-rc.3.tgz#6254f82c62ed569a2a90dcf1c7b71d4d8d951744"
-  integrity sha512-rrmZ91kdXBaCVomiNUQ1WvEClb5GcmxewGurd3FnsXKJBOhFdlkGbT5MY5ZQkMXH5xnIvs5ZEEB2iBr2ZqKiqg==
+react-dom@^17.0.1:
+  version "17.0.1"
+  resolved "https://npm.registry.formatic.com.au/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
+  integrity sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    scheduler "0.20.0-rc.3"
+    scheduler "^0.20.1"
 
 react-draggable@^4.0.3:
   version "4.4.3"
@@ -10210,10 +10178,10 @@ react@^17.0.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-react@^17.0.0-rc.3:
-  version "17.0.0-rc.3"
-  resolved "https://npm.registry.formatic.com.au/react/-/react-17.0.0-rc.3.tgz#ccb426b0146a8c10ee92c2a72d9d813a16a55806"
-  integrity sha512-b1vEcXBmlN2Bu+k57jq2ytEo5p28g5fdRfc02JRdnvGZKKphvlUnAfsrUHiOmUtL/6wvFIusi2zxp8t60fihfw==
+react@^17.0.1:
+  version "17.0.1"
+  resolved "https://npm.registry.formatic.com.au/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
+  integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -10555,11 +10523,6 @@ replace-ext@1.0.0:
   resolved "https://npm.registry.formatic.com.au/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
   integrity sha1-3mMSg3P8v3w8z6TeWkgMRaZ5WOs=
 
-replace-string@^3.0.0:
-  version "3.1.0"
-  resolved "https://npm.registry.formatic.com.au/replace-string/-/replace-string-3.1.0.tgz#77a087d88580fbac59851237891aa4b0e283db72"
-  integrity sha512-yPpxc4ZR2makceA9hy/jHNqc7QVkd4Je/N0WRHm6bs3PtivPuPynxE5ejU/mp5EhnCv8+uZL7vhz8rkluSlx+Q==
-
 request@^2.87.0, request@^2.88.0:
   version "2.88.2"
   resolved "https://npm.registry.formatic.com.au/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
@@ -10600,11 +10563,6 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://npm.registry.formatic.com.au/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
-
-resize-observer-polyfill@^1.5.1:
-  version "1.5.1"
-  resolved "https://npm.registry.formatic.com.au/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
-  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
@@ -10806,14 +10764,6 @@ sax@~1.2.4:
   resolved "https://npm.registry.formatic.com.au/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-scheduler@0.20.0-rc.3:
-  version "0.20.0-rc.3"
-  resolved "https://npm.registry.formatic.com.au/scheduler/-/scheduler-0.20.0-rc.3.tgz#ce616ebdd4073f5026718960d7e2d0928788c626"
-  integrity sha512-rPwhSgPKhRqximLHdl+oJ/8HVcMS2vyZlH74OQHqKbH04ONgKNkJ13DZLPdFSYFos8FUj6+PduO9+OoRaG6QWQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
 scheduler@^0.19.1:
   version "0.19.1"
   resolved "https://npm.registry.formatic.com.au/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
@@ -10826,6 +10776,14 @@ scheduler@^0.20.0:
   version "0.20.0"
   resolved "https://npm.registry.formatic.com.au/scheduler/-/scheduler-0.20.0.tgz#3ff543696b169613afadb09d3fb3fe998d234dd2"
   integrity sha512-XegIgta1bIaz2LdaL6eg1GEcE42g0BY9qFXCqlZ/+s2MuEKfigFCW6DEGBlZzeVFlwDmVusrWEyFtBo4sbkkdA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.20.1:
+  version "0.20.1"
+  resolved "https://npm.registry.formatic.com.au/scheduler/-/scheduler-0.20.1.tgz#da0b907e24026b01181ecbc75efdc7f27b5a000c"
+  integrity sha512-LKTe+2xNJBNxu/QhHvDR14wUXHRQbVY5ZOYpOGWRzhydZUqrLb2JBvLPY7cAqFmqrWuDED0Mjk7013SZiOz6Bw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

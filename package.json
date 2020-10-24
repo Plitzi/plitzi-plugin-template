@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,18 +14,18 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-element": "^0.1.7",
+    "@plitzi/plitzi-element": "^0.1.9",
     "lodash": "^4.17.15",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "redux": "^4.0.5",
     "recompose": "^0.30.0",
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.7",
-    "react": "^16.13.1",
-    "react-dom": "^17.0.0",
+    "@plitzi/plitzi-element": "^0.1.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-redux": "^7.2.1"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.0.4",
-    "@plitzi/plitzi-sdk": "^0.1.0",
+    "@plitzi/plitzi-sdk": "^0.1.12",
     "@storybook/addon-actions": "^6.0.22",
     "@storybook/addon-essentials": "^6.0.22",
     "@storybook/addon-links": "^6.0.22",
@@ -79,6 +79,7 @@
   "scripts": {
     "lint": "eslint ./src",
     "build:dev": "webpack --mode development",
+    "build:dev-watch": "webpack --mode development --watch-mode",
     "build:dev-gzip": "webpack --mode development --only-gzip",
     "build:dev-analyze": "webpack --mode development --only-analyze",
     "build:prod": "webpack -p",
