@@ -1317,6 +1317,19 @@
   dependencies:
     mkdirp "^1.0.4"
 
+"@plitzi/plitzi-element@^0.1.11":
+  version "0.1.11"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.11/e850abe7a4947681ff21249f27e31029d16e9c3dde059f9a67d17910332cc889#9ad749ad449164cc1b110417e0af17e0e523a7e9"
+  integrity sha512-csrpWFYvRuY7OJeotV0eQ9wKUB7cLPdv4tveiO3rsy5DIT1i5+tDkJn+ddyyxKhkw1mlWF6GbWr1/099ECveWg==
+  dependencies:
+    classnames "^2.2.6"
+    lodash "^4.17.15"
+    react "^17.0.1"
+    react-dom "^17.0.1"
+    react-redux "^7.2.1"
+    redux "^4.0.5"
+    redux-thunk "^2.3.0"
+
 "@plitzi/plitzi-element@^0.1.9":
   version "0.1.9"
   resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.9/4e9527426561364bb576bc4b95ecadbb582e333623bccd7149cf38334f44074b#e54152cf8dee86cbcf0ca2b8598392e91276b94e"
