@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "files": [
     "dist"
@@ -78,13 +78,13 @@
   },
   "scripts": {
     "lint": "eslint ./src",
-    "build:dev": "webpack --mode development",
-    "build:dev-watch": "webpack --mode development --watch-mode",
-    "build:dev-gzip": "webpack --mode development --only-gzip",
-    "build:dev-analyze": "webpack --mode development --only-analyze",
-    "build:prod": "webpack -p",
-    "build:prod-gzip": "webpack -p --only-gzip",
-    "build:prod-analyze": "webpack -p --only-analyze",
+    "build-assets:dev": "webpack --mode development",
+    "build-assets:dev-watch": "webpack --mode development --watch-mode",
+    "build-assets:dev-gzip": "webpack --mode development --only-gzip",
+    "build-assets:dev-analyze": "webpack --mode development --only-analyze",
+    "build-assets:prod": "webpack -p",
+    "build-assets:prod-gzip": "webpack -p --only-gzip",
+    "build-assets:prod-analyze": "webpack -p --only-analyze",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
