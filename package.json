@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-element": "^0.1.11",
+    "@plitzi/plitzi-element": "^0.1.15",
     "lodash": "^4.17.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -23,7 +23,7 @@
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.11",
+    "@plitzi/plitzi-element": "^0.1.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.1"
@@ -83,6 +83,7 @@
     "build-assets:dev-gzip": "webpack --mode development --only-gzip",
     "build-assets:dev-analyze": "webpack --mode development --only-analyze",
     "build-assets:prod": "webpack -p",
+    "build-assets:prod-watch": "webpack -p --watch-mode",
     "build-assets:prod-gzip": "webpack -p --only-gzip",
     "build-assets:prod-analyze": "webpack -p --only-analyze",
     "storybook": "start-storybook -p 6006",

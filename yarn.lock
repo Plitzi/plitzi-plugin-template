@@ -1317,10 +1317,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@plitzi/plitzi-element@^0.1.11":
-  version "0.1.11"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.11/e850abe7a4947681ff21249f27e31029d16e9c3dde059f9a67d17910332cc889#9ad749ad449164cc1b110417e0af17e0e523a7e9"
-  integrity sha512-csrpWFYvRuY7OJeotV0eQ9wKUB7cLPdv4tveiO3rsy5DIT1i5+tDkJn+ddyyxKhkw1mlWF6GbWr1/099ECveWg==
+"@plitzi/plitzi-element@^0.1.15":
+  version "0.1.15"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.15/2eb6886c305c39aa8be1637616ff23c506066d705d19bff26326f39f072f77c2#d413b967ed0ec0d5113a8bc8c43322500a41ff1f"
+  integrity sha512-+6vclrJ/eQGg2k5vJ7oa5vtC1Yush/RTIfbkk3MOz8FqLdHVUvjvpx+i1YfkU/MdO9FyVy9nQLemUcNaCNlb3g==
   dependencies:
     classnames "^2.2.6"
     lodash "^4.17.15"
