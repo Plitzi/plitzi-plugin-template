@@ -50,6 +50,6 @@ const schema = {
 
 export const simpleDemoComponent = () => (
   <PlitziSdk schema={schema}>
-    <PlitziSdk.override renderType="demo" component={Demo} />
+    <PlitziSdk.plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );

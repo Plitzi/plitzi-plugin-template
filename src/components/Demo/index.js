@@ -12,4 +12,10 @@ Demo.definition = {
   }
 };
 
+Demo.defaultStyle = {
+  name: 'Demo',
+  displayMode: 'desktop',
+  style: {}
+};
+
 export default Demo;
