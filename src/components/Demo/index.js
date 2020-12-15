@@ -1,4 +1,5 @@
 import Demo from './Demo';
+import Settings from './Settings';
 
 Demo.definition = {
   attributes: {
@@ -17,5 +18,7 @@ Demo.defaultStyle = {
   displayMode: 'desktop',
   style: {}
 };
+
+Demo.settings = Settings;
 
 export default Demo;
