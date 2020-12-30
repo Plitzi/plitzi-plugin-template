@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-element": "^0.1.22",
+    "@plitzi/plitzi-element": "^0.1.23",
     "lodash": "^4.17.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -23,7 +23,7 @@
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.22",
+    "@plitzi/plitzi-element": "^0.1.23",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.1"
@@ -79,11 +79,11 @@
   "scripts": {
     "lint": "eslint ./src",
     "build-assets:dev": "webpack --mode development",
-    "build-assets:dev-watch": "webpack --mode development --watch-mode",
+    "build-assets:dev-watch": "webpack --mode development --watch",
     "build-assets:dev-gzip": "webpack --mode development --only-gzip",
     "build-assets:dev-analyze": "webpack --mode development --only-analyze",
     "build-assets:prod": "webpack -p",
-    "build-assets:prod-watch": "webpack -p --watch-mode",
+    "build-assets:prod-watch": "webpack -p --watch",
     "build-assets:prod-gzip": "webpack -p --only-gzip",
     "build-assets:prod-analyze": "webpack -p --only-analyze",
     "storybook": "start-storybook -p 6006",

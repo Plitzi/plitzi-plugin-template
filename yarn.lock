@@ -1354,10 +1354,10 @@
     redux "^4.0.5"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-element@^0.1.22":
-  version "0.1.22"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.22/da13888df10e50a59c63650dca140c4be8b82e62cf65408c4e7e5345c3ce929b#3ba8f8ffff906c30deeb8b72fe61a31e9ada19b0"
-  integrity sha512-+JNWKUw1NDDiDk+uP3PWBueBNDB0VNIsjNdwU4dg9BMKNRln/foURqylNoHOBczZ5U5/PGPka8x2uZVs9+gPiQ==
+"@plitzi/plitzi-element@^0.1.23":
+  version "0.1.23"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.23/a11aba45a0ba9d904c5f290722fcea2f3b6f6171687b5a22735010f91c0b7ce7#e8456bf90f0843b63f32b0713eba95ed0e337495"
+  integrity sha512-BKQVKPKGFYktJGLr2XgAauB6KmJ0u9nLLIILhfoX7a3g/RM58ZNOPNM8gJ731z6Ob58GWbJd9Z4pnjohgFehog==
   dependencies:
     classnames "^2.2.6"
     lodash "^4.17.15"
