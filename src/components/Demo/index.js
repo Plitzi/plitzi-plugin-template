@@ -1,5 +1,6 @@
 import Demo from './Demo';
 import Settings from './Settings';
+import Package from '../../../package.json';
 
 Demo.definition = {
   attributes: {
@@ -20,5 +21,7 @@ Demo.defaultStyle = {
 };
 
 Demo.settings = Settings;
+
+export const { version } = Package;
 
 export default Demo;
