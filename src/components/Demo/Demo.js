@@ -34,4 +34,6 @@ Demo.propTypes = {
   className: PropTypes.string
 };
 
+export { Demo as DemoWithoutHOC };
+
 export default compose(withElement)(Demo);
