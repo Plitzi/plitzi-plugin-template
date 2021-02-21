@@ -20,7 +20,8 @@ Demo.definition = {
   definition: {
     label: 'Demo',
     type: 'demo',
-    category: 'basic'
+    category: 'basic',
+    bindings: {}
   }
 };
 
