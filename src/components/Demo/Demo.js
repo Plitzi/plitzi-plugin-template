@@ -6,18 +6,18 @@ import { withElement, BaseElement } from '@plitzi/plitzi-element';
 
 class Demo extends BaseElement {
   render() {
-    const { className, internal, setElementRef } = this.props;
+    const { className, internal, internalProps } = this.props;
 
     if (!internal.previewMode) {
       return (
-        <div ref={setElementRef} className={classNames('plitzi-component__demo', { [className]: className })}>
+        <div {...internalProps} className={classNames('plitzi-component__demo', { [className]: className })}>
           Demo Component
         </div>
       );
     }
 
     return (
-      <div ref={setElementRef} className={classNames('plitzi-component__demo', { [className]: className })}>
+      <div {...internalProps} className={classNames('plitzi-component__demo', { [className]: className })}>
         Hi, this is a Plitzi demo component
       </div>
     );
