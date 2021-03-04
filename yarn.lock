@@ -1384,10 +1384,10 @@
     redux "^4.0.5"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-element@^0.1.32":
-  version "0.1.32"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.32/a5e9c79135a567602eed16b4839b3770cce9bccbdcd36b2bfe6fbc52ba33da7d#f72336943a515d5995146063dfc8f96fe6f934cf"
-  integrity sha512-S9qmTQKItOlIGw1QSPERmujVfLa4bc8H+GLrYJIAdVcsPEOHfiuYkJAiMasl/OrOPefAFdT9n5fKMc1dmz/q4w==
+"@plitzi/plitzi-element@^0.1.33":
+  version "0.1.33"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.33/6dc02f4a522300e11a56c07c9c0089ad123443187563de541ead9324738ddf28#a95d3ff00324df62fcf83b610cdde65498f4df4e"
+  integrity sha512-0KcX3jFzvHwuJhUzHYXNvYDxoQZIfLk27qYlIMpdhB5OGN/g2iaqEGAibJ0zdnCUXYYODU8uubaTHepJXl65Aw==
   dependencies:
     classnames "^2.2.6"
     lodash "^4.17.15"
@@ -5549,6 +5549,11 @@ eslint-config-airbnb@^18.0.1:
     eslint-config-airbnb-base "^14.2.0"
     object.assign "^4.1.0"
     object.entries "^1.1.2"
+
+eslint-config-prettier@^8.1.0:
+  version "8.1.0"
+  resolved "https://npm.registry.formatic.com.au/eslint-config-prettier/-/eslint-config-prettier-8.1.0.tgz#4ef1eaf97afe5176e6a75ddfb57c335121abc5a6"
+  integrity sha512-oKMhGv3ihGbCIimCAjqkdzx2Q+jthoqnXSP+d86M9tptwugycmTFdVR4IpLgq2c4SHifbwO90z2fQ8/Aio73yw==
 
 eslint-config-react-app@^5.0.2:
   version "5.2.1"

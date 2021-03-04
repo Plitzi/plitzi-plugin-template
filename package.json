@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-element": "^0.1.32",
+    "@plitzi/plitzi-element": "^0.1.33",
     "lodash": "^4.17.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -23,7 +23,7 @@
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.32",
+    "@plitzi/plitzi-element": "^0.1.33",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.1"
@@ -55,6 +55,7 @@
     "css-loader": "^3.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-config-react-app": "^5.0.2",
     "eslint-plugin-flowtype": "4.3.0",
     "eslint-plugin-import": "^2.18.2",
