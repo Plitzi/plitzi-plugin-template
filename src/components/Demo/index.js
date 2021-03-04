@@ -14,7 +14,7 @@ export { DemoWithoutHOC };
 
 Demo.definition = {
   attributes: {
-    selectorClass: { items: [], raw: '' }
+    selectorClass: ''
   },
   defaultAttributes: {},
   definition: {

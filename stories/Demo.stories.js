@@ -17,10 +17,7 @@ const schema = {
   flat: {
     '5f544375ced80ed16f382b7b': {
       attributes: {
-        selectorClass: {
-          items: [],
-          raw: ''
-        }
+        selectorClass: ''
       },
       definition: {
         label: 'Page 0',
@@ -34,7 +31,7 @@ const schema = {
     '5f47e7ca8294097d8b0a1715': {
       id: '5f47e7ca8294097d8b0a1715',
       attributes: {
-        selectorClass: { items: [], raw: '' }
+        selectorClass: ''
       },
       definition: {
         label: 'Demo',
