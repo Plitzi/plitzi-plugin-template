@@ -46,7 +46,7 @@ const schema = {
 };
 
 export const simpleDemoComponent = () => (
-  <PlitziSdk schema={schema}>
+  <PlitziSdk offlineMode schema={schema}>
     <PlitziSdk.plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );

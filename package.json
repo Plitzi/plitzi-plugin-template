@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,22 +14,18 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-element": "^0.1.40",
     "lodash": "^4.17.15",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "redux": "^4.0.5",
     "recompose": "^0.30.0",
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.40",
+    "@plitzi/plitzi-element": "^0.1.42",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.1"
   },
   "devDependencies": {
-    "@babel/compat-data": "^7.11.0",
+    "@babel/compat-data": "^7.13.15",
     "@babel/core": "^7.11.1",
     "@babel/helper-builder-react-jsx-experimental": "^7.10.5",
     "@babel/helper-validator-identifier": "^7.10.4",
@@ -38,7 +34,8 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.0.4",
-    "@plitzi/plitzi-sdk": "^0.1.35",
+    "@plitzi/plitzi-element": "^0.1.42",
+    "@plitzi/plitzi-sdk": "^0.1.68",
     "@storybook/addon-actions": "^6.0.22",
     "@storybook/addon-essentials": "^6.0.22",
     "@storybook/addon-links": "^6.0.22",
@@ -66,6 +63,8 @@
     "handlebars-webpack-plugin": "^1.6.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-is": "^16.13.1",
     "redux-logger": "^3.0.6",
     "sass-loader": "^8.0.0",
