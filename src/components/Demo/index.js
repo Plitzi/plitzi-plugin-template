@@ -28,7 +28,7 @@ Demo.content = {
     verified: true,
     license: 'MIT',
     website: 'https://plitzi.com',
-    backgroundColor: '#1A2835',
+    backgroundColor: '#4422ee',
     icon: ''
   },
   settings: Settings,
