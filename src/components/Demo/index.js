@@ -12,30 +12,36 @@ const {
 
 export { DemoWithoutHOC };
 
-Demo.definition = {
+Demo.content = {
   attributes: {
     selectorClass: ''
   },
-  defaultAttributes: {},
   definition: {
     label: 'Demo',
     type: 'demo',
     category: 'basic',
     bindings: {}
-  }
-};
-
-Demo.settings = Settings;
-
-Demo.bindings = {
-  attributes: [],
-  style: [StyleConstants.BACKGROUND_BACKGROUND_COLOR]
-};
-
-Demo.defaultStyle = {
-  name: 'Demo',
-  displayMode: 'desktop',
-  style: {}
+  },
+  market: {
+    category: 'demo',
+    owner: 'Plitzi',
+    verified: true,
+    license: 'MIT',
+    website: 'https://plitzi.com',
+    backgroundColor: '#1A2835',
+    icon: ''
+  },
+  settings: Settings,
+  bindingsAllowed: {
+    attributes: [],
+    style: [StyleConstants.BACKGROUND_BACKGROUND_COLOR]
+  },
+  defaultStyle: {
+    name: 'Demo',
+    displayMode: 'desktop',
+    style: {}
+  },
+  version: Package.version
 };
 
 export const { version } = Package;
