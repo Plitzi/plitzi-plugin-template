@@ -1,7 +1,12 @@
+// Packages
 import React from 'react';
 import PlitziSdk from '@plitzi/plitzi-sdk';
 
+// Relatives
 import Demo from '../src/components/Demo/Demo';
+
+// Style
+import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
 
 export default {
   title: 'Example/Demo',
@@ -17,10 +22,11 @@ const schema = {
   flat: {
     '5f544375ced80ed16f382b7b': {
       attributes: {
-        selectorClass: ''
+        selectorClass: '',
+        name: 'Home'
       },
       definition: {
-        label: 'Page 0',
+        label: 'Page',
         type: 'page',
         slug: '',
         category: 'structure',
@@ -38,7 +44,13 @@ const schema = {
         type: 'demo',
         category: 'advanced',
         description: '',
-        parentId: '5f544375ced80ed16f382b7b'
+        parentId: '5f544375ced80ed16f382b7b',
+        builder: {
+          isContainer: true,
+          overlay: {
+            theme: 'normal'
+          }
+        }
       }
     }
   },
@@ -46,7 +58,7 @@ const schema = {
 };
 
 export const simpleDemoComponent = () => (
-  <PlitziSdk offlineMode schema={schema}>
+  <PlitziSdk offlineMode offlineData={{ schema }}>
     <PlitziSdk.plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );

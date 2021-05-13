@@ -1389,10 +1389,10 @@
     redux "^4.0.5"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-sdk@^0.1.72":
-  version "0.1.72"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.1.72/727353b8fd44ef9416c7474d3bb6a9fdbce0b27e1d746b1f05a679da967aba6e#baac35ddd5fb9804c9f802fd3b4deedb0be1a2c0"
-  integrity sha512-3FNqf0Ho88I5JuUXp5Te2OJbB0L2vPUqxj/GRFzAwO3UBariSG72ept+ZiXNbRMXW0ykUBNzkXIOnuUt939ELw==
+"@plitzi/plitzi-sdk@^0.1.81":
+  version "0.1.81"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.1.81/b1da9da60b965fca34f0b8a88453433d233a5fdfc665089669e6becb64d26d5d#9d72543f0ddf90bb8500b63452798d30cff05c09"
+  integrity sha512-zJAm0alp2Y7ufGdZ45wz6a2JtOyMnsqcJa+aTXFeO4PAcDNiXe6Hu1xMczLMzOdot+yLOtXdpCLZ6mvJsLaolg==
   dependencies:
     "@apollo/client" "^3.2.5"
     "@plitzi/plitzi-element" "^0.1.46"
@@ -11640,6 +11640,14 @@ style-loader@^1.2.1:
   dependencies:
     loader-utils "^2.0.0"
     schema-utils "^2.7.0"
+
+style-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-2.0.0.tgz#9669602fd4690740eaaec137799a03addbbc393c"
+  integrity sha512-Z0gYUJmzZ6ZdRUqpg1r8GsaFKypE+3xAzuFeMuoHgjc9KZv3wMyCRjQIWEbhoFSq7+7yoHXySDJyyWQaPajeiQ==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
 
 style-to-object@0.3.0, style-to-object@^0.3.0:
   version "0.3.0"
