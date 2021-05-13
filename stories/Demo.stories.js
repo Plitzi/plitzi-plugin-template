@@ -3,7 +3,7 @@ import React from 'react';
 import PlitziSdk from '@plitzi/plitzi-sdk';
 
 // Relatives
-import Demo from '../src/components/Demo/Demo';
+import Demo, { DemoWithoutHOC } from '../src/components/Demo/Demo';
 
 // Style
 import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
@@ -57,7 +57,9 @@ const schema = {
   pages: ['5f544375ced80ed16f382b7b']
 };
 
-export const simpleDemoComponent = () => (
+export const withoutHoc = () => <DemoWithoutHOC />;
+
+export const withHoc = () => (
   <PlitziSdk offlineMode offlineData={{ schema }}>
     <PlitziSdk.plugin renderType="demo" component={Demo} />
   </PlitziSdk>
