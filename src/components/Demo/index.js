@@ -19,7 +19,6 @@ Demo.content = {
   definition: {
     label: 'Demo',
     type: 'demo',
-    category: 'basic',
     bindings: {}
   },
   market: {

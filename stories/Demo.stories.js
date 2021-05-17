@@ -29,14 +29,7 @@ const schema = {
         label: 'Page',
         type: 'page',
         slug: '',
-        category: 'structure',
-        items: ['5f47e7ca8294097d8b0a1715'],
-        builder: {
-          isContainer: true,
-          overlay: {
-            theme: 'normal'
-          }
-        }
+        items: ['5f47e7ca8294097d8b0a1715']
       },
       id: '5f544375ced80ed16f382b7b'
     },
@@ -48,7 +41,6 @@ const schema = {
       definition: {
         label: 'Demo',
         type: 'demo',
-        category: 'advanced',
         description: '',
         parentId: '5f544375ced80ed16f382b7b'
       }
