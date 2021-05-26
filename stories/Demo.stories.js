@@ -19,8 +19,8 @@ const schema = {
     title: 'Default',
     customCss: ''
   },
-  flat: {
-    '5f544375ced80ed16f382b7b': {
+  flat: [
+    {
       attributes: {
         selectorClass: '',
         name: 'Home'
@@ -38,7 +38,7 @@ const schema = {
       },
       id: '5f544375ced80ed16f382b7b'
     },
-    '5f47e7ca8294097d8b0a1715': {
+    {
       id: '5f47e7ca8294097d8b0a1715',
       attributes: {
         selectorClass: ''
@@ -50,7 +50,7 @@ const schema = {
         parentId: '5f544375ced80ed16f382b7b'
       }
     }
-  },
+  ],
   pages: ['5f544375ced80ed16f382b7b']
 };
 
