@@ -1376,10 +1376,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@plitzi/plitzi-element@^0.1.51":
-  version "0.1.51"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.51/cb2ca5db1533e2ed8f8d235bc71c0c51bfd8794256e1dc1d4b40ded8251bb522#fba55d9f4937c040c1e422ab142c385116c0f417"
-  integrity sha512-d4DsC7Jo/17nVtBE6ydQnRNOrDNYVQamIIbnMhRuvYPn2d+B8+8V3Mje3MVlpFcQq9tGEpcwjnPWmxUdrx8ixQ==
+"@plitzi/plitzi-element@^0.1.52":
+  version "0.1.52"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.52/4d5b74aba74ede31f64c2d51370fe51cd8218aed47796b3d0e1dd9ffd775ff48#6b710c0931b920ff27f2961790ef02e0c1824482"
+  integrity sha512-25CJXFxV+R5ur4I0f2WtF9Mt2rMOnrBrL+xMkLoM6tFcPLY67GCyGTIkqdTln9RZcR1CsRlb7IWMmce/yQAoUg==
   dependencies:
     classnames "^2.2.6"
     lodash "^4.17.15"
@@ -1389,13 +1389,13 @@
     redux "^4.0.5"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-sdk@^0.2.3":
-  version "0.2.3"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.3/1c8ff2e4be4bb2d57ab26783f9ffb3c3c6a0591a5e06240371290afc87d239f8#69727637939762eb1f0985f8741f06a68b2465be"
-  integrity sha512-c8k/b9gYD1EmoS75EX0o2goJG9v2WdDXHQ9gcRnT2iAa3MPub/OhJFpJeLuP3rs1fpwLKkgoGGijB500Fs7iFA==
+"@plitzi/plitzi-sdk@^0.2.4":
+  version "0.2.4"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.4/0e24515814f58c45a7ed3f6d896a677beeb2de07f692cd2b6f7fc45d6b3ce087#d4708a4b0f49babe385a820f988742b8c6b5ac75"
+  integrity sha512-rOl7O5V3HJjIzHr9QwX6DdFbXlvXnU4CpDfsv3jUt2bk3wzObqF2JPKnK8vKHQKofzIS0SdeLgf00m6KRpQ/UA==
   dependencies:
     "@apollo/client" "^3.2.5"
-    "@plitzi/plitzi-element" "^0.1.51"
+    "@plitzi/plitzi-element" "^0.1.52"
     axios "^0.19.0"
     classnames "^2.2.6"
     graphql "^15.4.0"
