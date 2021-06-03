@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { compose } from 'recompose';
+import { compose } from 'redux';
 import { withElement, BaseElement } from '@plitzi/plitzi-element';
 
 class Demo extends BaseElement {

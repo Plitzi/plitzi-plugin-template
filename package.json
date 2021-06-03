@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.58",
+  "version": "0.1.59",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,19 +14,18 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "recompose": "^0.30.0",
+    "lodash": "^4.17.21",
     "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.52",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.1"
+    "@plitzi/plitzi-element": "^0.1.56",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4"
   },
   "devDependencies": {
-    "@plitzi/plitzi-element": "^0.1.52",
-    "@plitzi/plitzi-sdk": "^0.2.9",
+    "@plitzi/plitzi-element": "^0.1.56",
+    "@plitzi/plitzi-sdk": "^0.2.14",
     "@babel/compat-data": "^7.13.15",
     "@babel/core": "^7.11.1",
     "@babel/helper-builder-react-jsx-experimental": "^7.10.5",
@@ -64,8 +63,9 @@
     "handlebars-webpack-plugin": "^1.6.0",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
     "react-is": "^16.13.1",
     "redux-logger": "^3.0.6",
     "sass-loader": "^8.0.0",
@@ -73,10 +73,10 @@
     "url-loader": "^2.1.0",
     "webpack": "4.42.0",
     "webpack-assets-manifest": "^3.1.1",
-    "webpack-bundle-analyzer": "3.6.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "3.11.0",
-    "webpack-subresource-integrity": "^1.4.0"
+    "webpack-subresource-integrity": "^1.5.2"
   },
   "scripts": {
     "lint": "eslint ./src",
