@@ -1396,10 +1396,10 @@
     redux "^4.1.0"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-sdk@^0.2.15":
-  version "0.2.15"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.15/b71c8bf4e5679ee2999e0ca5d6e242e49bc745b5ad8c9de7f6e4f51096c65458#cecf0220c0f98fbaa63f14189c5ed5083ae08d44"
-  integrity sha512-i8pqtr3sHl04vSgIKIdC+gJtHC45TCUND8XzC/mz9jVhAxup27/uQLtzZFZWCd2KL+TX7u773jgHNRnH3r1qqw==
+"@plitzi/plitzi-sdk@^0.2.16":
+  version "0.2.16"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.16/cf5eae3164ff1d5c22668c57af91e752fa312d1ca3c6030b7a25c1a22ee44fbf#9fa41c7b095e122353cd73448fb2154dca8e9443"
+  integrity sha512-l8wgcVd+PFGnFMh2oFP/X6bpYJVScQOHxRNEknEsiRxNsBRBw1OzPEEJGF+G9nA2hZyJ67MlPDvKZMAWJ7BGqw==
   dependencies:
     "@apollo/client" "^3.3.19"
     "@plitzi/plitzi-element" "^0.1.57"
