@@ -1,15 +1,48 @@
-import Demo from './Demo';
+// Packages
+import { Utils } from '@plitzi/plitzi-element';
 
-Demo.definition = {
+// Relatives
+import Demo, { DemoWithoutHOC } from './Demo';
+import Settings from './Settings';
+import Package from '../../../package.json';
+
+const {
+  Style: { StyleConstants }
+} = Utils;
+
+export { DemoWithoutHOC };
+
+Demo.content = {
   attributes: {
-    selectorClass: { items: [], raw: '' }
+    selectorClass: ''
   },
-  defaultAttributes: {},
   definition: {
     label: 'Demo',
     type: 'demo',
-    category: 'basic'
-  }
+    bindings: {}
+  },
+  market: {
+    category: 'demo',
+    owner: 'Plitzi',
+    verified: true,
+    license: 'MIT',
+    website: 'https://plitzi.com',
+    backgroundColor: '#4422ee',
+    icon: ''
+  },
+  settings: Settings,
+  bindingsAllowed: {
+    attributes: [],
+    style: [StyleConstants.BACKGROUND_BACKGROUND_COLOR]
+  },
+  defaultStyle: {
+    name: 'Demo',
+    displayMode: 'desktop',
+    style: {}
+  },
+  version: Package.version
 };
+
+export const { version } = Package;
 
 export default Demo;

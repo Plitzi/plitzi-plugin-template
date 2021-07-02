@@ -23,7 +23,7 @@ const build = (env, args) => {
   const devMode = args.mode !== 'production';
   const onlyGzip = args.onlyGzip || false;
   const onlyAnalyze = args.onlyAnalyze || false;
-  const watchMode = args.watchMode || false;
+  const watch = args.watch || false;
 
   const modules = {
     entry: { ...entry, All: './src/index.js' },
@@ -35,7 +35,7 @@ const build = (env, args) => {
       libraryTarget: 'umd',
       globalObject: "(typeof self !== 'undefined' ? self : this)"
     },
-    watch: watchMode,
+    watch,
     externals: {
       react: {
         root: 'React',
@@ -68,7 +68,7 @@ const build = (env, args) => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]], // [classic] will disable new JSX compiler and [automatic] will enable it
-              plugins: ['@babel/plugin-proposal-class-properties']
+              plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
             }
           }
         },
@@ -82,12 +82,7 @@ const build = (env, args) => {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                // publicPath: '../',
-                hmr: devMode
-              }
+              options: {}
             },
             'css-loader',
             {

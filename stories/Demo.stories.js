@@ -1,7 +1,12 @@
+// Packages
 import React from 'react';
 import PlitziSdk from '@plitzi/plitzi-sdk';
 
-import Demo from '../src/components/Demo/Demo';
+// Relatives
+import Demo, { DemoWithoutHOC } from '../src/components/Demo/Demo';
+
+// Style
+import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
 
 export default {
   title: 'Example/Demo',
@@ -14,42 +19,45 @@ const schema = {
     title: 'Default',
     customCss: ''
   },
-  flat: {
-    '5f544375ced80ed16f382b7b': {
+  flat: [
+    {
       attributes: {
-        selectorClass: {
-          items: [],
-          raw: ''
-        }
+        selectorClass: '',
+        name: 'Home'
       },
       definition: {
-        label: 'Page 0',
+        label: 'Page',
         type: 'page',
         slug: '',
-        category: 'structure',
+        builder: {
+          isContainer: true,
+          itemsAllowed: [],
+          itemsNotAllowed: []
+        },
         items: ['5f47e7ca8294097d8b0a1715']
       },
       id: '5f544375ced80ed16f382b7b'
     },
-    '5f47e7ca8294097d8b0a1715': {
+    {
       id: '5f47e7ca8294097d8b0a1715',
       attributes: {
-        selectorClass: { items: [], raw: '' }
+        selectorClass: ''
       },
       definition: {
         label: 'Demo',
         type: 'demo',
-        category: 'advanced',
         description: '',
         parentId: '5f544375ced80ed16f382b7b'
       }
     }
-  },
+  ],
   pages: ['5f544375ced80ed16f382b7b']
 };
 
-export const simpleDemoComponent = () => (
-  <PlitziSdk schema={schema}>
-    <PlitziSdk.override renderType="demo" component={Demo} />
+export const withoutHoc = () => <DemoWithoutHOC />;
+
+export const withHoc = () => (
+  <PlitziSdk offlineMode offlineData={{ schema }}>
+    <PlitziSdk.plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );
