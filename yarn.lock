@@ -1615,19 +1615,17 @@
     redux "^4.1.0"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-sdk@^0.2.29":
-  version "0.2.29"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.29/bd32121aba1880f03c766ce53d7b4412e64353106f536e2829d78d526ea25846#a6253c8ecb4ca1fddc07853b4709922cae8f2960"
-  integrity sha512-9BePru3Xmp0yJoxtANOdRUr86OJC+zfRWqfUinqgHfjBKwnPslKOqgqQAqB10i16Lprp8ZFN9Wqe9fS4tjo/TA==
+"@plitzi/plitzi-sdk@^0.2.30":
+  version "0.2.30"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.30/8e50b2c92015c39a8b6ac9af6db4474906ecc40bf815f9122d44e9c4d4784505#986ff8bd22ab2ccae31be0d6ea279c8360272370"
+  integrity sha512-JPgX2fAotJ6oNKYqPv7ruUxDI4O1R1OYRISpmk+AU7i6tLIFg8rlPZbbW0f3znzvRj0WOeAIeruIIU4j/IQfew==
   dependencies:
     "@apollo/client" "^3.3.19"
     "@plitzi/plitzi-element" "^0.1.62"
-    axios "^0.21.1"
     classnames "^2.3.1"
     graphql "^15.4.0"
     lodash "^4.17.21"
     react "^17.0.2"
-    react-color "^2.18.1"
     react-dom "^17.0.2"
     react-helmet "^6.1.0"
     react-redux "^7.2.4"
@@ -3538,13 +3536,6 @@ axe-core@^3.5.4:
   version "3.5.5"
   resolved "https://npm.registry.formatic.com.au/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
-
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  dependencies:
-    follow-redirects "^1.10.0"
 
 axobject-query@^2.1.2:
   version "2.2.0"
@@ -6476,11 +6467,6 @@ follow-redirects@^1.0.0:
   version "1.13.0"
   resolved "https://npm.registry.formatic.com.au/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
-
-follow-redirects@^1.10.0:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
-  integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -10462,7 +10448,7 @@ raw-loader@^4.0.1:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
-react-color@^2.17.0, react-color@^2.18.1:
+react-color@^2.17.0:
   version "2.18.1"
   resolved "https://npm.registry.formatic.com.au/react-color/-/react-color-2.18.1.tgz#2cda8cc8e06a9e2c52ad391a30ddad31972472f4"
   integrity sha512-X5XpyJS6ncplZs74ak0JJoqPi+33Nzpv5RYWWxn17bslih+X7OlgmfpmGC1fNvdkK7/SGWYf1JJdn7D2n5gSuQ==
