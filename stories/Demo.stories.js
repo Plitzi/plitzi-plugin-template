@@ -58,6 +58,6 @@ export const withoutHoc = () => <DemoWithoutHOC />;
 
 export const withHoc = () => (
   <PlitziSdk offlineMode offlineData={{ schema }}>
-    <PlitziSdk.plugin renderType="demo" component={Demo} />
+    <PlitziSdk.Plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );
