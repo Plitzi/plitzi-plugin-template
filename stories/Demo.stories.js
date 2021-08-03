@@ -57,7 +57,28 @@ const schema = {
 export const withoutHoc = () => <DemoWithoutHOC />;
 
 export const withHoc = () => (
-  <PlitziSdk offlineMode offlineData={{ schema }}>
+  <PlitziSdk
+    offlineMode
+    offlineData={{ schema }}
+    // storybook compiled assets are under /main.css
+    externalAssets={[
+      {
+        type: 'link',
+        id: 'demo',
+        params: {
+          type: 'text/css',
+          href: '/main.css',
+          rel: 'stylesheet'
+        }
+      }
+    ]}
+  >
+    <PlitziSdk.Plugin renderType="demo" component={Demo} />
+  </PlitziSdk>
+);
+
+export const withHocNoIframe = () => (
+  <PlitziSdk offlineMode iframeMode={false} offlineData={{ schema }}>
     <PlitziSdk.Plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );
