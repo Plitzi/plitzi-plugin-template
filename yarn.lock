@@ -2338,25 +2338,20 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@plitzi/plitzi-element@^0.1.66":
-  version "0.1.66"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.66/a3a4ab6f4e26727eeffad93496f28012621e48dc4a7f6a61f1524765a0450386#eaa5fd135e0cd475aad50863e18a5110b921c2bb"
-  integrity sha512-jhqlChtJGBseuC0nkKYOb8oBOREfqtWc+V34GucT1WAv7w1HUraAC1yGXh90L7dbCiSGG5BBE3Kj4oNINTSx5w==
+"@plitzi/plitzi-element@^0.1.67":
+  version "0.1.67"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.67/e158fde39323fb00527b45aa79f73d788ab9a55f83baa1c5eff579f687524ec7#0e76697fa34a98d6ddb173be1faacc693e4244f2"
+  integrity sha512-NbngqzACe9AhTxiEahIp1+cG3SBrnogoZRLQbgHNzWdpiBgQ2Z0ZHqNjHImPKhWhrfuCsXnc2FQobekOgbo6PQ==
   dependencies:
     classnames "^2.3.1"
-    react "^17.0.2"
-    react-dom "^17.0.2"
-    react-redux "^7.2.4"
-    redux "^4.1.0"
-    redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-sdk@^0.2.36":
-  version "0.2.36"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.36/1387c53bcbe24c40a43800067addcaa76e7934e0137649ec05544cd05713e9d6#d9ea70e1d5b41f9840a642ea155db3ae2ff12c9f"
-  integrity sha512-PO5iKOFFOpY1dXrralauKSTEWeMECQ0vC+7M7v7gCPrKHH0Lw1DMfDShMpuHlY9vVUKIsOa/LPhWTghQ26ckrA==
+"@plitzi/plitzi-sdk@^0.2.37":
+  version "0.2.37"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.37/5751eb9ba55f98ac4e48bad91e9758337f4c752162d79cfde0d0259bae28cfb9#645306c0f335549bfed3d9959eca5695c3e75448"
+  integrity sha512-AUOaQy74l4Sz/y0tKnpx3g+vEtcb0EM2NhHtUK74uU2pBIGdQ/eBnhtyo/ny6E0I2T8Cx99g+VnWC390VGMKPw==
   dependencies:
     "@apollo/client" "^3.3.19"
-    "@plitzi/plitzi-element" "^0.1.66"
+    "@plitzi/plitzi-element" "^0.1.67"
     classnames "^2.3.1"
     graphql "^15.4.0"
     lodash "^4.17.21"
@@ -11493,7 +11488,7 @@ redux-thunk@^2.3.0:
   resolved "https://npm.registry.formatic.com.au/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
-redux@^4.0.0, redux@^4.1.0:
+redux@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.1.0.tgz#eb049679f2f523c379f1aff345c8612f294c88d4"
   integrity sha512-uI2dQN43zqLWCt6B/BMGRMY6db7TTY4qeHHfGeKb3EOhmOKjU3KdWvNLJyqaHRksv/ErdNH7cFZWg9jXtewy4g==

@@ -229,7 +229,7 @@ const build = (env, args) => {
   }
 
   if (onlyAnalyze) {
-    modules.plugins.push(new BundleAnalyzerPlugin());
+    modules.plugins.push(new BundleAnalyzerPlugin({ analyzerPort: 4000 }));
   }
 
   return modules;
