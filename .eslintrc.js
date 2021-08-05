@@ -21,7 +21,8 @@ module.exports = {
     handlebars: true,
     google: true,
     jQuery: true,
-    $: true
+    $: true,
+    VERSION: true
   },
   plugins: ['react'],
   rules: {

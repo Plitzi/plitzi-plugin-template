@@ -2345,10 +2345,10 @@
   dependencies:
     classnames "^2.3.1"
 
-"@plitzi/plitzi-sdk@^0.2.37":
-  version "0.2.37"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.37/5751eb9ba55f98ac4e48bad91e9758337f4c752162d79cfde0d0259bae28cfb9#645306c0f335549bfed3d9959eca5695c3e75448"
-  integrity sha512-AUOaQy74l4Sz/y0tKnpx3g+vEtcb0EM2NhHtUK74uU2pBIGdQ/eBnhtyo/ny6E0I2T8Cx99g+VnWC390VGMKPw==
+"@plitzi/plitzi-sdk@^0.2.38":
+  version "0.2.38"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.38/13981c02371ffd48dbf2ef202deb190f6a1578f5d301539dbcfadc588d390cbc#4eee21b0c44e33a212cf9ec1c38381669a790681"
+  integrity sha512-Mk/JGu3uJPQgmR6aMzA3x6pPU/ee3vsJ0n1VbrRbm2YlQ/4m/QxUq8BNLNHjSFNRjHwKUEzHdS46PFzjX4WfHQ==
   dependencies:
     "@apollo/client" "^3.3.19"
     "@plitzi/plitzi-element" "^0.1.67"

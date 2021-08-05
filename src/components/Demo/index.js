@@ -4,7 +4,6 @@ import { Utils } from '@plitzi/plitzi-element';
 // Relatives
 import Demo, { DemoWithoutHOC } from './Demo';
 import Settings from './Settings';
-import Package from '../../../package.json';
 
 const {
   Style: { StyleConstants }
@@ -40,9 +39,9 @@ Demo.content = {
     displayMode: 'desktop',
     style: {}
   },
-  version: Package.version
+  version: VERSION
 };
 
-export const { version } = Package;
+export const version = VERSION;
 
 export default Demo;

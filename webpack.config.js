@@ -6,6 +6,7 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const glob = require('glob');
+const webpack = require('webpack');
 
 const PACKAGE = require('./package.json');
 
@@ -97,6 +98,9 @@ const build = (env, args) => {
       ]
     },
     plugins: [
+      new webpack.DefinePlugin({
+        VERSION: JSON.stringify(PACKAGE.version)
+      }),
       new MiniCssExtractPlugin({
         filename: 'plitzi-plugin-[name].css'
       }),
