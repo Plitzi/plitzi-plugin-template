@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import { compose } from 'redux';
 import { withElement, BaseElement } from '@plitzi/plitzi-element';
 
+// Styles
+import './Assets/index.scss';
+
 class Demo extends BaseElement {
   render() {
     const { className, internalProps } = this.props;
