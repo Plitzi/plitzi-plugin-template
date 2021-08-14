@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.85",
+  "version": "0.1.86",
   "license": "MIT",
   "files": [
     "dist"
@@ -21,8 +21,6 @@
     "react-redux": "^7.2.4"
   },
   "devDependencies": {
-    "@plitzi/plitzi-element": "^0.1.68",
-    "@plitzi/plitzi-sdk": "^0.2.39",
     "@babel/compat-data": "^7.13.15",
     "@babel/core": "^7.11.1",
     "@babel/helper-builder-react-jsx-experimental": "^7.10.5",
@@ -32,8 +30,11 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.0.4",
+    "@plitzi/plitzi-element": "^0.1.68",
+    "@plitzi/plitzi-sdk": "^0.2.39",
     "@storybook/addon-actions": "^6.3.6",
     "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-knobs": "^6.3.0",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/node-logger": "^6.3.6",
     "@storybook/preset-create-react-app": "^3.2.0",

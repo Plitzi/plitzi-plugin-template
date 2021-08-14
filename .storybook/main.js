@@ -5,7 +5,12 @@ const PACKAGE = require('../package.json');
 
 module.exports = {
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/preset-create-react-app'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-knobs',
+    '@storybook/preset-create-react-app'
+  ],
   webpackFinal: async (config, { configType }) => {
     config.resolve = {
       ...config.resolve,

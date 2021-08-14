@@ -9,13 +9,13 @@ import './Assets/index.scss';
 
 class Demo extends BaseElement {
   render() {
-    const { className, internalProps } = this.props;
+    const { className, internalProps, content } = this.props;
     const { ref, style, previewMode } = internalProps;
 
     if (!previewMode) {
       return (
         <div ref={ref} style={style} className={classNames('plitzi-component__demo', { [className]: className })}>
-          Demo Component
+          {content}
         </div>
       );
     }
@@ -30,12 +30,14 @@ class Demo extends BaseElement {
 
 Demo.defaultProps = {
   ...BaseElement.defaultProps,
-  className: ''
+  className: '',
+  content: 'Demo Component'
 };
 
 Demo.propTypes = {
   ...BaseElement.propTypes,
-  className: PropTypes.string
+  className: PropTypes.string,
+  content: PropTypes.string
 };
 
 export { Demo as DemoWithoutHOC };

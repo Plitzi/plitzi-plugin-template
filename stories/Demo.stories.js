@@ -1,6 +1,7 @@
 // Packages
 import React from 'react';
 import PlitziSdk from '@plitzi/plitzi-sdk';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 // Relatives
 import Demo, { DemoWithoutHOC } from '../src/components/Demo';
@@ -10,6 +11,7 @@ import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
 
 export default {
   title: 'Example/Demo',
+  decorators: [withKnobs],
   component: Demo,
   argTypes: {}
 };
@@ -54,7 +56,7 @@ const schema = {
   pages: ['5f544375ced80ed16f382b7b']
 };
 
-export const withoutHoc = () => <DemoWithoutHOC />;
+export const withoutHoc = () => <DemoWithoutHOC content={text('Content', 'Demo Component')} />;
 
 export const withHoc = () => (
   <PlitziSdk
