@@ -3,7 +3,7 @@ import React from 'react';
 import PlitziSdk from '@plitzi/plitzi-sdk';
 
 // Relatives
-import Demo, { DemoWithoutHOC } from '../src/components/Demo/Demo';
+import Demo, { DemoWithoutHOC } from '../src/components/Demo';
 
 // Style
 import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';

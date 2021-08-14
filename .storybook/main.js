@@ -1,5 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const webpack = require('webpack');
+const PACKAGE = require('../package.json');
 
 module.exports = {
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
@@ -35,37 +37,42 @@ module.exports = {
       exclude: /(node_modules|bower_components)/
     });
 
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            // modules: true // Enable modules to help you using className
-          }
-        }
-      ]
-    });
+    config.plugins = [
+      ...config.plugins,
+      new MiniCssExtractPlugin({}),
+      new webpack.DefinePlugin({
+        VERSION: JSON.stringify(PACKAGE.version)
+      })
+    ];
 
-    config.plugins = [...config.plugins, new MiniCssExtractPlugin({})];
-
-    config.module.rules.push({
-      test: /\.(sa|sc)ss$/,
-      use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {}
-        },
-        'css-loader',
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true
+    config.module.rules.map(rule => {
+      if (rule.oneOf) {
+        rule.oneOf = rule.oneOf.slice().map(subRule => {
+          if (subRule.test instanceof RegExp && subRule.test.test('.scss')) {
+            return {
+              ...subRule,
+              use: [
+                // ...subRule.use,
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {}
+                },
+                'css-loader',
+                {
+                  loader: 'sass-loader',
+                  options: {
+                    sourceMap: false
+                  }
+                }
+              ]
+            };
           }
-        }
-      ],
-      exclude: /(node_modules|bower_components)/
+
+          return subRule;
+        });
+      }
+
+      return rule;
     });
 
     // Return the altered config
