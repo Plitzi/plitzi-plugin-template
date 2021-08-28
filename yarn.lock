@@ -2837,20 +2837,20 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@plitzi/plitzi-element@^0.1.69":
-  version "0.1.69"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.69/7f45dc64dc5e8c1891b1d2ca9a9ded2cf2a1de6c6521714b6d0492b3be19e978#fca5738413444b56be82bb5683f96d1c2f4b20dd"
-  integrity sha512-Mklw2qX8l9pbWkPRs3A/PZklOqUMuztDbxTp/7bA2tB4J4bhZ05jONQJtlz3zU3YYSxraxBxxcGlglRHrztbZw==
+"@plitzi/plitzi-element@^0.1.70":
+  version "0.1.70"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.70/1ad643f9311beaa488ff9c703a63850db127607424b8d688ba93247fbf672b40#cc9340accc7e1d3668f08ac376940c8d9dd3aa66"
+  integrity sha512-40Uq3ijNcyf9oerHjvjNsH8EDuZC0bbfTBH/yzbMiJo67JrJXKrZOKfWXbVwvMDumeOZ7vuwVpMmbpTZhNYz0w==
   dependencies:
     classnames "^2.3.1"
 
-"@plitzi/plitzi-sdk@^0.2.40":
-  version "0.2.40"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.40/714671698561de0bbd8336dd339295460061f4a0e30c3ca09d210f9ad1efe124#5c5c475f4dd8392295ea552206498d3aee2d1c82"
-  integrity sha512-okXT4KPKKvKpcFfzzpJDSJEc+Erf3kDOGAraNWDwX42vPbSECiKQqPusLVApyTGkO5i3ZavfRCmyF0KCFmaLDA==
+"@plitzi/plitzi-sdk@^0.2.41":
+  version "0.2.41"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.41/2a678125f81e1df45903ca36eeb4aa08361ce2a73bdc54f1dff6b4f0417913b5#25738021f07be66bbafac5c088fae83e8f1f0b26"
+  integrity sha512-3P4KYLiqhiYXTkoeP0xVduaAr//v7l1vrDty3AFObVv1vTDIffwuMucFqatwNEb/g/UWIUCAAwtYMQHGddHDiA==
   dependencies:
     "@apollo/client" "^3.3.19"
-    "@plitzi/plitzi-element" "^0.1.69"
+    "@plitzi/plitzi-element" "^0.1.70"
     classnames "^2.3.1"
     graphql "^15.4.0"
     lodash "^4.17.21"
