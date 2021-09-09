@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.89",
+  "version": "0.1.90",
   "license": "MIT",
   "files": [
     "dist"
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@plitzi/plitzi-element": "^0.1.70",
-    "@plitzi/plitzi-sdk": "^0.2.42",
+    "@plitzi/plitzi-sdk": "^0.2.43",
     "@babel/compat-data": "^7.13.15",
     "@babel/core": "^7.11.1",
     "@babel/helper-builder-react-jsx-experimental": "^7.10.5",
