@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.91",
+  "version": "0.1.92",
   "license": "MIT",
   "files": [
     "dist"
@@ -15,14 +15,14 @@
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {},
   "peerDependencies": {
-    "@plitzi/plitzi-element": "^0.1.70",
+    "@plitzi/plitzi-element": "^0.1.71",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4"
   },
   "devDependencies": {
-    "@plitzi/plitzi-element": "^0.1.70",
-    "@plitzi/plitzi-sdk": "^0.2.44",
+    "@plitzi/plitzi-element": "^0.1.71",
+    "@plitzi/plitzi-sdk": "^0.2.45",
     "@babel/compat-data": "^7.13.15",
     "@babel/core": "^7.11.1",
     "@babel/helper-builder-react-jsx-experimental": "^7.10.5",
