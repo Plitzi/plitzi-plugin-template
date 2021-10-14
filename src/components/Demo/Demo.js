@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { compose } from 'redux';
 import { withElement } from '@plitzi/plitzi-element';
 
 // Styles
@@ -41,4 +40,4 @@ Demo.propTypes = {
 
 export { Demo as DemoWithoutHOC };
 
-export default compose(withElement)(Demo);
+export default withElement(Demo);
