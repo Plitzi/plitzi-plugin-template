@@ -5,19 +5,22 @@ name: npm-publish
 
 on:
   release:
-    types: [created]
+    types: [published]
   push:
     branches:
+      - develop
+      - staging
       - main # Change this to your default branch
 
 jobs:
-  build:
+  packages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: Cache multiple paths
         id: cache-packages
@@ -27,11 +30,6 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-          # restore-keys: |
-          #   ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-
-          #   ${{ runner.os }}-build-${{ env.cache-name }}-
-          #   ${{ runner.os }}-build-
-          #   ${{ runner.os }}-
 
       - name: Login Registry
         run: |
@@ -42,21 +40,17 @@ jobs:
         if: steps.cache-packages.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Yarn Lint
-        run: yarn lint
-
-      # - name: Yarn Tests
-      #   run: yarn test:ci
-
-  publish-github:
-    needs: build
+  lint:
+    needs: packages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
           registry-url: https://npm.pkg.github.com/plitzi
+
       - name: Restore Cache
         uses: actions/cache@v2
         env:
@@ -64,11 +58,55 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-          # restore-keys: |
-          #   ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-
-          #   ${{ runner.os }}-build-${{ env.cache-name }}-
-          #   ${{ runner.os }}-build-
-          #   ${{ runner.os }}-
+
+      - name: Yarn Lint
+        run: yarn lint
+
+      - name: Yarn Scss Lint
+        run: yarn lint-style
+
+  # tests:
+  #   if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master')
+  #   needs: lint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14
+  #         registry-url: https://npm.pkg.github.com/plitzi
+
+  #     - name: Restore Cache
+  #       uses: actions/cache@v2
+  #       env:
+  #         cache-name: cache-node-modules
+  #       with:
+  #         path: '**/node_modules'
+  #         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+
+  #     - name: Yarn Tests
+  #       run: yarn test:ci
+
+  publish-github:
+    if: github.event_name == 'release' && startsWith(github.ref, 'refs/tags/v')
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://npm.pkg.github.com/plitzi
+
+      - name: Restore Cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Yarn Build
         run: yarn build-assets:prod
@@ -78,3 +116,42 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  # publish-s3:
+  #   if: github.event_name == 'release' && startsWith(github.ref, 'refs/tags/v')
+  #   needs: lint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14
+  #         registry-url: https://npm.pkg.github.com/plitzi
+  #     - name: Restore Cache
+  #       uses: actions/cache@v2
+  #       env:
+  #         cache-name: cache-node-modules
+  #       with:
+  #         path: '**/node_modules'
+  #         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+
+  #     - name: Yarn Build
+  #       run: yarn build-assets:prod-gzip
+
+  #     - name: Read package.json
+  #       uses: tyankatsu0105/read-package-version-actions@v1
+  #       with:
+  #         path: '.'
+  #       id: package-version
+
+  #     - name: Configure AWS Credentials
+  #       uses: aws-actions/configure-aws-credentials@v1
+  #       with:
+  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         aws-region: us-east-1
+
+  #     - name: Deploy static site to S3 bucket
+  #       run: |
+  #         aws s3 sync ./dist/ s3://plitzi-plugins/com.COMPANY/pluginType/${{steps.package-version.outputs.version}} --exclude "*" --include "*.js" --include "*.css" --content-encoding gzip --delete
+  #         aws s3 sync ./dist/ s3://plitzi-plugins/com.COMPANY/pluginType/${{steps.package-version.outputs.version}} --exclude "*" --include "*.json" --delete
