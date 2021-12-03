@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.1.96",
+  "version": "0.1.97",
   "license": "MIT",
   "files": [
     "dist"
