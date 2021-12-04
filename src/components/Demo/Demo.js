@@ -1,5 +1,5 @@
 // Packages
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withElement } from '@plitzi/plitzi-element';
@@ -8,33 +8,36 @@ import { withElement } from '@plitzi/plitzi-element';
 import './Assets/index.scss';
 
 const Demo = props => {
-  const { className, internalProps, content } = props;
-  const { ref, style, previewMode } = internalProps;
+  const { className, internalProps, content, PlitziContext } = props;
+  const { ref, style } = internalProps;
+  const { previewMode } = useContext(PlitziContext);
 
   if (!previewMode) {
     return (
       <div ref={ref} style={style} className={classNames('plitzi-component__demo', { [className]: className })}>
-        {content}
+        Hi, this is a Plitzi demo component Preview Mode False
       </div>
     );
   }
 
   return (
     <div ref={ref} style={style} className={classNames('plitzi-component__demo', { [className]: className })}>
-      Hi, this is a Plitzi demo component
+      {content}
     </div>
   );
 };
 
 Demo.defaultProps = {
-  internalProps: null,
   className: '',
+  PlitziContext: null,
+  internalProps: null,
   content: 'Demo Component'
 };
 
 Demo.propTypes = {
-  internalProps: PropTypes.object,
   className: PropTypes.string,
+  PlitziContext: PropTypes.object,
+  internalProps: PropTypes.object,
   content: PropTypes.string
 };
 
