@@ -8,9 +8,12 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-knobs',
+    '@storybook/addon-controls',
     '@storybook/preset-create-react-app'
   ],
+  core: {
+    builder: "webpack5",
+  },
   webpackFinal: async (config, { configType }) => {
     config.resolve = {
       ...config.resolve,

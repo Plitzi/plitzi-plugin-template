@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Cache multiple paths
         id: cache-packages
@@ -48,7 +48,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
           registry-url: https://npm.pkg.github.com/plitzi
 
       - name: Restore Cache
@@ -74,7 +74,7 @@ jobs:
 
   #     - uses: actions/setup-node@v1
   #       with:
-  #         node-version: 14
+  #         node-version: 16
   #         registry-url: https://npm.pkg.github.com/plitzi
 
   #     - name: Restore Cache
@@ -97,7 +97,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
           registry-url: https://npm.pkg.github.com/plitzi
 
       - name: Restore Cache
@@ -125,7 +125,7 @@ jobs:
   #     - uses: actions/checkout@v2
   #     - uses: actions/setup-node@v1
   #       with:
-  #         node-version: 14
+  #         node-version: 16
   #         registry-url: https://npm.pkg.github.com/plitzi
   #     - name: Restore Cache
   #       uses: actions/cache@v2

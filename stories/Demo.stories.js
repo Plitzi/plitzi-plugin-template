@@ -1,7 +1,6 @@
 // Packages
 import React from 'react';
 import PlitziSdk, { PlitziContext } from '@plitzi/plitzi-sdk';
-import { withKnobs, text } from '@storybook/addon-knobs';
 
 // Relatives
 import Demo, { DemoWithoutHOC } from '../src/components/Demo';
@@ -11,7 +10,7 @@ import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
 
 export default {
   title: 'Example/Demo',
-  decorators: [withKnobs],
+  decorators: [],
   component: Demo,
   argTypes: {}
 };
@@ -44,7 +43,7 @@ const schema = {
       id: '5f47e7ca8294097d8b0a1715',
       attributes: {
         selectorClass: '',
-        content: 'testing'
+        content: 'Testing'
       },
       definition: {
         label: 'Demo',
@@ -57,9 +56,11 @@ const schema = {
   pages: ['5f544375ced80ed16f382b7b']
 };
 
+const providerValue = { previewMode: true };
+
 export const withoutHoc = () => (
-  <PlitziContext.Provider value={{ previewMode: true }}>
-    <DemoWithoutHOC PlitziContext={PlitziContext} internalProps={{}} content={text('Content', 'Demo Component')} />
+  <PlitziContext.Provider value={providerValue}>
+    <DemoWithoutHOC PlitziContext={PlitziContext} internalProps={{}} content="Demo Component" />
   </PlitziContext.Provider>
 );
 

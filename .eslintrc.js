@@ -3,13 +3,13 @@ module.exports = {
     browser: true,
     es6: true
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   extends: ['airbnb', 'prettier'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
   parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-react']
+    },
     ecmaFeatures: {
       jsx: true
     },
@@ -17,6 +17,8 @@ module.exports = {
     sourceType: 'module'
   },
   globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
     moment: true,
     handlebars: true,
     google: true,
@@ -64,6 +66,7 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'operator-linebreak': ['error', 'after'],
     'react/jsx-props-no-spreading': 0,
+    'react/function-component-definition': 0,
     'no-use-before-define': 0,
     'no-plusplus': 0
   }
