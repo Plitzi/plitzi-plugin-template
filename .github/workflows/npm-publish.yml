@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
+          registry-url: https://npm.pkg.github.com
+          scope: '@plitzi'
 
       - name: Cache multiple paths
         id: cache-packages
@@ -31,14 +33,11 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Login Registry
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > .npmrc
-          echo "@plitzi:registry=https://npm.pkg.github.com/" >> .npmrc
-
       - name: Yarn Install
         if: steps.cache-packages.outputs.cache-hit != 'true'
         run: yarn install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   lint:
     needs: packages
@@ -114,8 +113,7 @@ jobs:
       - name: Yarn Publish
         run: yarn publish
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   # publish-s3:
   #   if: github.event_name == 'release' && startsWith(github.ref, 'refs/tags/v')
