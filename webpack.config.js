@@ -182,7 +182,6 @@ const build = (env, args) => {
   if (onlyGzip) {
     modules.plugins.push(
       new CompressionPlugin({
-        filename: '[path]',
         algorithm: 'gzip',
         test: /\.js$|\.css$|\.html$/,
         threshold: 10240,
@@ -192,7 +191,6 @@ const build = (env, args) => {
   } else {
     modules.plugins.push(
       new CompressionPlugin({
-        filename: '[path].gz',
         algorithm: 'gzip',
         test: /\.js$|\.css$|\.html$/,
         threshold: 10240,
