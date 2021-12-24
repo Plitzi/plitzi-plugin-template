@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "files": [
     "dist"
@@ -31,6 +31,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@plitzi/plitzi-element": "^0.1.78",
     "@plitzi/plitzi-sdk": "^0.2.57",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-controls": "^6.4.9",
@@ -61,6 +62,9 @@
     "handlebars-webpack-plugin": "^2.2.1",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^7.0.0",
+    "react": "^18.0.0-rc",
+    "react-dom": "^18.0.0-rc",
+    "react-redux": "^7.2.6",
     "react-is": "^17.0.2",
     "react-scripts": "^5.0.0",
     "redux-logger": "^3.0.6",
