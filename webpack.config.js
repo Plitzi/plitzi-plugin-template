@@ -22,9 +22,9 @@ const entry = glob.sync('./src/components/**/**/index.js').reduce((acc, value) =
 
 const build = (env, args) => {
   const devMode = args.mode !== 'production';
-  const onlyGzip = args.onlyGzip || false;
-  const onlyAnalyze = args.onlyAnalyze || false;
-  const watch = args.watch || false;
+  const onlyGzip = env.onlyGzip || false;
+  const onlyAnalyze = env.onlyAnalyze || false;
+  const watch = env.watch || false;
 
   const modules = {
     entry: { ...entry, All: './src/index.js' },
