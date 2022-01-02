@@ -1668,21 +1668,14 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plitzi/plitzi-element@^0.1.78":
-  version "0.1.78"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-element/0.1.78/d342d9bc6e8f7e4f2b9fa63d5795def9159e5eb5e4c3f4b677b2d912ba620826#c286b2c70568bde22a5416907f50b524ba60bd87"
-  integrity sha512-gaYL3B4BhoqHU5ELrQhBQDvaWiXfrNANYIaWj4kfCE+CSeQAUhuGunbspCCH11df6Td8+FChUnmmkvZh7KsVJg==
-  dependencies:
-    classnames "^2.3.1"
-
-"@plitzi/plitzi-sdk@^0.2.57":
-  version "0.2.57"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.2.57/816ffcd77c77dbb3549973bfc34c09901bf4b29d98c53be0ac3d62b815f24514#1d3ffe068235e614ef0e2b620d6e07948cb83528"
-  integrity sha512-Q5+yljmnCvhP9FtLkJTUHuY1z1XDvh61oIZZCn0y2458iWEJETGnI+lJVH3HSiLTJ6TvgTFJkBoKFEiDGBhRvw==
+"@plitzi/plitzi-sdk@^0.3.1":
+  version "0.3.1"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.3.1/e6499dd207ac81cc1c3a5d49fd70dbd25dad815bdcefd229009fa12c2ac588d3#20eed495d0f3f9e7b3bb0e0f38f6420c4a563f37"
+  integrity sha512-m0/vXi/LxjoCjhP3XfvOwpOKpquxkNaqWuhAHpesTTbMusu8vyYQPJDvvYyqYOIHXsmko3RWmvKtjx3m1C/56g==
   dependencies:
     "@apollo/client" "^3.3.19"
-    "@plitzi/plitzi-element" "^0.1.78"
     classnames "^2.3.1"
+    dompurify "^2.3.4"
     graphql "^15.4.0"
     lodash "^4.17.21"
     react "^18.0.0-rc"
@@ -6921,6 +6914,11 @@ domhandler@^4.0.0, domhandler@^4.2.0, domhandler@^4.3.0:
   integrity sha512-fC0aXNQXqKSFTr2wDNZDhsEYjCiYsDWl3D01kwt25hm1YIPyDGHvvi3rw+PLqHAl/m71MaiF7d5zvBr0p5UB2g==
   dependencies:
     domelementtype "^2.2.0"
+
+dompurify@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.4.tgz#1cf5cf0105ccb4debdf6db162525bd41e6ddacc6"
+  integrity sha512-6BVcgOAVFXjI0JTjEvZy901Rghm+7fDQOrNIcxB4+gdhj6Kwp6T9VBhBY/AbagKHJocRkDYGd6wvI+p4/10xtQ==
 
 domutils@^1.5.1, domutils@^1.7.0:
   version "1.7.0"

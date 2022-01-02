@@ -5,20 +5,25 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
+const fs = require('fs');
 const glob = require('glob');
 const webpack = require('webpack');
+
+const { ModuleFederationPlugin } = webpack.container;
 
 const PACKAGE = require('./package.json');
 
 const DESTINATION = path.resolve(__dirname, './dist/');
 
-const entry = glob.sync('./src/components/**/**/index.js').reduce((acc, value) => {
-  const valueArr = value.split('/');
-  const elementName = valueArr[valueArr.length - 2];
-  acc[elementName] = value;
+const PluginName = 'demo';
+const componentsManifest = {};
+glob.sync('./src/component/**/**/manifest.json').forEach(value => {
+  const manifest = JSON.parse(fs.readFileSync(value));
 
-  return acc;
-}, {});
+  if (manifest && manifest.definition && manifest.definition.type) {
+    componentsManifest[manifest.definition.type] = manifest;
+  }
+});
 
 const build = (env, args) => {
   const devMode = args.mode !== 'production';
@@ -26,39 +31,31 @@ const build = (env, args) => {
   const onlyAnalyze = env.onlyAnalyze || false;
   const watch = env.watch || false;
 
+  const MFplitziSdkFederationRemotes = [];
+  if (devMode) {
+    MFplitziSdkFederationRemotes.push('plitziSdkFederation@http://localhost:3001/plitzi-sdk-federation.js');
+  } else {
+    MFplitziSdkFederationRemotes.push('plitziSdkFederation@https://cdn.plitzi.com/sdk/latest/plitzi-sdk-federation.js');
+  }
+
   const modules = {
-    entry: { ...entry, All: './src/index.js' },
+    entry: { [PluginName]: './src/component/index.js' },
     output: {
       path: DESTINATION,
       filename: 'plitzi-plugin-[name].js',
-      chunkFilename: '[name].extras.js',
-      library: 'PlitziPlugin[name]',
-      libraryTarget: 'umd',
-      globalObject: "(typeof self !== 'undefined' ? self : this)"
+      chunkFilename: 'plitzi-plugin-chunk-[name].js'
     },
     watch,
-    externals: {
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-        umd: 'react'
+    target: 'web',
+    devServer: {
+      // compress: true,
+      hot: false, // until figure out whats going on
+      liveReload: true,
+      // historyApiFallback: true,
+      static: {
+        directory: path.join(__dirname, 'dist')
       },
-      'react-redux': {
-        root: 'ReactRedux',
-        commonjs2: 'react-redux',
-        commonjs: 'react-redux',
-        amd: 'react-redux',
-        umd: 'react-redux'
-      },
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-        umd: 'react-dom'
-      }
+      port: 3999
     },
     module: {
       rules: [
@@ -98,37 +95,97 @@ const build = (env, args) => {
       ]
     },
     plugins: [
+      new ModuleFederationPlugin({
+        name: 'PlitziPluginFederation',
+        // name: `PlitziPluginFederation${PluginName.replace(/^./, PluginName[0].toUpperCase())}`,
+        // library: { type: 'var', name: 'PlitziPluginFederation' },
+        filename: `plitzi-plugin-${PluginName}-federation.js`,
+        remotes: {
+          plitziSdkFederation: MFplitziSdkFederationRemotes
+          // plitziSdkFederation: `promise new Promise(resolve => {
+          //   debugger;
+
+          //   const proxy = {
+          //     get: (request, w) => {
+          //       console.log(w)
+          //       return window.plitziSdkFederation.get(request)
+          //     },
+          //     init: (arg) => {
+          //       try {
+          //         return window.plitziSdkFederation.init(arg)
+          //       } catch(e) {
+          //         console.log('remote container already initialized')
+          //       }
+          //     }
+          //   };
+
+          //   resolve(proxy);
+          // })`
+          // plitziSdkFederation2: [
+          //   require.resolve('@plitzi/plitzi-sdk'),
+          //   path.resolve(__dirname, '../remoteServer/public/server/container.js'),
+          //   'plitziSdkFederation@http://localhost:3001/plitzi-sdk-federation.js'
+          // ]
+          // app123: `promise new Promise(resolve())`,
+          // app1: `promise new Promise(resolve => {
+          //   const urlParams = new URLSearchParams(window.location.search)
+          //   const version = urlParams.get('app1VersionParam')
+          //   // This part depends on how you plan on hosting and versioning your federated modules
+          //   const remoteUrlWithVersion = 'http://localhost:3001/' + version + '/remoteEntry.js'
+          //   const script = document.createElement('script')
+          //   script.src = remoteUrlWithVersion
+          //   script.onload = () => {
+          //     // the injected script has loaded and is available on window
+          //     // we can now resolve this Promise
+          //     const proxy = {
+          //       get: (request) => window.app1.get(request),
+          //       init: (arg) => {
+          //         try {
+          //           return window.app1.init(arg)
+          //         } catch(e) {
+          //           console.log('remote container already initialized')
+          //         }
+          //       }
+          //     }
+          //     resolve(proxy)
+          //   }
+          //   // inject this script with the src set to the versioned remoteEntry.js
+          //   document.head.appendChild(script);
+          // })
+          // `
+        },
+        exposes: {
+          Plugin: './src/component/index.js'
+        },
+        shared: {
+          react: { singleton: true, requiredVersion: PACKAGE.dependencies.react },
+          'react-dom': { singleton: true, requiredVersion: PACKAGE.dependencies['react-dom'] },
+          'react-redux': { singleton: true, requiredVersion: PACKAGE.dependencies['react-redux'] }
+        }
+      }),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(PACKAGE.version)
       }),
       new MiniCssExtractPlugin({
-        filename: 'plitzi-plugin-[name].css'
+        filename: 'plitzi-plugin-[name].css',
+        chunkFilename: 'plitzi-plugin-chunk-[name].css'
       }),
       new WebpackAssetsManifest({
+        output: 'plugin-manifest.json',
         integrity: true,
         integrityHashes: ['sha384'],
         sortManifest: false,
         assets: {
-          accessGroup: ['auser'],
+          accessGroup: [],
           author: 'Carlos Rodriguez <crodriguez@plitzi.com>',
           created: '',
           updated: '',
-          widgetArea: 'main',
-          widgetName: 'widget',
-          widgetVersion: PACKAGE.version
+          pluginVersion: PACKAGE.version,
+          components: componentsManifest
         },
         transform: (assets, manifest) => {
           const customAssets = { assets: {} };
-          [
-            'accessGroup',
-            'author',
-            'created',
-            'updated',
-            'widgetArea',
-            'widgetName',
-            'widgetPath',
-            'widgetVersion'
-          ].forEach(asset => {
+          ['accessGroup', 'author', 'created', 'updated', 'pluginVersion', 'components'].forEach(asset => {
             customAssets[asset] = assets[asset];
             delete assets[asset];
           });
@@ -138,66 +195,19 @@ const build = (env, args) => {
           return customAssets;
         }
       }),
-      new WebpackAssetsManifest({
-        output: 'app.json',
-        integrity: true,
-        integrityHashes: ['sha384'],
-        sortManifest: false,
-        assets: {
-          accessGroup: ['auser'],
-          author: 'Carlos Rodriguez <>',
-          created: '',
-          updated: '',
-          widgetArea: 'main',
-          widgetName: 'widget',
-          widgetVersion: PACKAGE.version
-        },
-        transform: (assets, manifest) => {
-          const customAssets = { assets: {} };
-          [
-            'accessGroup',
-            'author',
-            'created',
-            'updated',
-            'widgetArea',
-            'widgetName',
-            'widgetPath',
-            'widgetVersion'
-          ].forEach(asset => {
-            customAssets[asset] = assets[asset];
-            delete assets[asset];
-          });
-
-          customAssets.assets = assets;
-
-          return customAssets;
-        }
+      new CompressionPlugin({
+        algorithm: 'gzip',
+        filename: onlyGzip ? '[path][base]' : '[path][base].gz',
+        deleteOriginalAssets: onlyGzip,
+        test: /\.js$|\.css$|\.html$/,
+        threshold: 1024,
+        minRatio: 0.8
       })
     ],
     stats: {
       colors: true
     }
   };
-
-  if (onlyGzip) {
-    modules.plugins.push(
-      new CompressionPlugin({
-        algorithm: 'gzip',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8
-      })
-    );
-  } else {
-    modules.plugins.push(
-      new CompressionPlugin({
-        algorithm: 'gzip',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8
-      })
-    );
-  }
 
   if (devMode) {
     modules.devtool = 'source-map';
@@ -216,18 +226,6 @@ const build = (env, args) => {
         })
       ]
     };
-
-    // Optional Brotli algoritm require Node +12
-    // modules.plugins.push(
-    //   new CompressionPlugin({
-    //     filename: '[path].br[query]',
-    //     algorithm: 'brotliCompress',
-    //     test: /\.(js|css|html|svg)$/,
-    //     compressionOptions: { level: 11 },
-    //     threshold: 10240,
-    //     minRatio: 0.8
-    //   })
-    // );
   }
 
   if (onlyAnalyze) {

@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "selectorClass": ""
+  },
+  "definition": {
+    "label": "Demo",
+    "type": "demo",
+    "bindings": {}
+  },
+  "market": {
+    "category": "demo",
+    "owner": "Plitzi",
+    "verified": true,
+    "license": "MIT",
+    "website": "https://plitzi.com",
+    "backgroundColor": "#4422ee",
+    "icon": ""
+  },
+  "bindingsAllowed": {
+    "attributes": [],
+    "style": ["background-color"]
+  },
+  "defaultStyle": {
+    "name": "Demo",
+    "displayMode": "desktop",
+    "style": {}
+  },
+  "settings": {}
+}
