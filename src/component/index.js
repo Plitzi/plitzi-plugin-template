@@ -1,13 +1,12 @@
 // Relatives
 import Demo from './Demo';
 import Settings from './Settings';
-import manifest from './manifest.json';
 
-Demo.content = {
-  ...manifest,
-  instanceSettings: Settings,
-  version: VERSION
-};
+Demo.type = 'demo';
+Demo.pluginSettings = Settings;
+Demo.version = VERSION;
+
+export const plugins = {};
 
 export const version = VERSION;
 

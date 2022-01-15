@@ -5,8 +5,6 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
-const fs = require('fs');
-const glob = require('glob');
 const webpack = require('webpack');
 
 const { ModuleFederationPlugin } = webpack.container;
@@ -16,14 +14,6 @@ const PACKAGE = require('./package.json');
 const DESTINATION = path.resolve(__dirname, './dist/');
 
 const PluginName = 'demo';
-const componentsManifest = {};
-glob.sync('./src/component/**/**/manifest.json').forEach(value => {
-  const manifest = JSON.parse(fs.readFileSync(value));
-
-  if (manifest && manifest.definition && manifest.definition.type) {
-    componentsManifest[manifest.definition.type] = manifest;
-  }
-});
 
 const build = (env, args) => {
   const devMode = args.mode !== 'production';
@@ -175,25 +165,14 @@ const build = (env, args) => {
         integrity: true,
         integrityHashes: ['sha384'],
         sortManifest: false,
-        assets: {
+        transform: assets => ({
           accessGroup: [],
           author: 'Carlos Rodriguez <crodriguez@plitzi.com>',
           created: '',
           updated: '',
           pluginVersion: PACKAGE.version,
-          components: componentsManifest
-        },
-        transform: (assets, manifest) => {
-          const customAssets = { assets: {} };
-          ['accessGroup', 'author', 'created', 'updated', 'pluginVersion', 'components'].forEach(asset => {
-            customAssets[asset] = assets[asset];
-            delete assets[asset];
-          });
-
-          customAssets.assets = assets;
-
-          return customAssets;
-        }
+          assets
+        })
       }),
       new CompressionPlugin({
         algorithm: 'gzip',
