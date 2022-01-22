@@ -1,5 +1,5 @@
 // Packages
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import usePlitziServiceContext from 'plitziSdkFederation/usePlitziServiceContext'; // eslint-disable-line
@@ -7,9 +7,9 @@ import usePlitziServiceContext from 'plitziSdkFederation/usePlitziServiceContext
 // Styles
 import './Assets/index.scss';
 
-const Demo = props => {
+const Demo = forwardRef((props, ref) => {
   const { className, internalProps, content } = props;
-  const { ref, style } = internalProps;
+  const { style } = internalProps;
   const { previewMode } = usePlitziServiceContext();
 
   if (!previewMode) {
@@ -25,7 +25,7 @@ const Demo = props => {
       {content}
     </div>
   );
-};
+});
 
 Demo.defaultProps = {
   className: '',
