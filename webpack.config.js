@@ -21,27 +21,21 @@ const build = (env, args) => {
   const onlyAnalyze = env.onlyAnalyze || false;
   const watch = env.watch || false;
 
-  const MFplitziSdkFederationRemotes = [];
-  if (devMode) {
-    MFplitziSdkFederationRemotes.push('plitziSdkFederation@http://localhost:3001/plitzi-sdk-federation.js');
-  } else {
-    MFplitziSdkFederationRemotes.push('plitziSdkFederation@https://cdn.plitzi.com/sdk/latest/plitzi-sdk-federation.js');
-  }
-
   const modules = {
     entry: { [PluginName]: './src/component/index.js' },
     output: {
       path: DESTINATION,
+      library: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
       filename: 'plitzi-plugin-[name].js',
       chunkFilename: 'plitzi-plugin-chunk-[name].js'
     },
     watch,
     target: 'web',
     devServer: {
-      // compress: true,
+      compress: true,
       hot: false, // until figure out whats going on
       liveReload: true,
-      // historyApiFallback: true,
+      historyApiFallback: true,
       static: {
         directory: path.join(__dirname, 'dist')
       },
@@ -86,71 +80,21 @@ const build = (env, args) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: 'PlitziPluginFederation',
-        // name: `PlitziPluginFederation${PluginName.replace(/^./, PluginName[0].toUpperCase())}`,
-        // library: { type: 'var', name: 'PlitziPluginFederation' },
+        name: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}Federation`,
         filename: `plitzi-plugin-${PluginName}-federation.js`,
         remotes: {
-          plitziSdkFederation: MFplitziSdkFederationRemotes
-          // plitziSdkFederation: `promise new Promise(resolve => {
-          //   debugger;
-
-          //   const proxy = {
-          //     get: (request, w) => {
-          //       console.log(w)
-          //       return window.plitziSdkFederation.get(request)
-          //     },
-          //     init: (arg) => {
-          //       try {
-          //         return window.plitziSdkFederation.init(arg)
-          //       } catch(e) {
-          //         console.log('remote container already initialized')
-          //       }
-          //     }
-          //   };
-
-          //   resolve(proxy);
-          // })`
-          // plitziSdkFederation2: [
-          //   require.resolve('@plitzi/plitzi-sdk'),
-          //   path.resolve(__dirname, '../remoteServer/public/server/container.js'),
-          //   'plitziSdkFederation@http://localhost:3001/plitzi-sdk-federation.js'
-          // ]
-          // app123: `promise new Promise(resolve())`,
-          // app1: `promise new Promise(resolve => {
-          //   const urlParams = new URLSearchParams(window.location.search)
-          //   const version = urlParams.get('app1VersionParam')
-          //   // This part depends on how you plan on hosting and versioning your federated modules
-          //   const remoteUrlWithVersion = 'http://localhost:3001/' + version + '/remoteEntry.js'
-          //   const script = document.createElement('script')
-          //   script.src = remoteUrlWithVersion
-          //   script.onload = () => {
-          //     // the injected script has loaded and is available on window
-          //     // we can now resolve this Promise
-          //     const proxy = {
-          //       get: (request) => window.app1.get(request),
-          //       init: (arg) => {
-          //         try {
-          //           return window.app1.init(arg)
-          //         } catch(e) {
-          //           console.log('remote container already initialized')
-          //         }
-          //       }
-          //     }
-          //     resolve(proxy)
-          //   }
-          //   // inject this script with the src set to the versioned remoteEntry.js
-          //   document.head.appendChild(script);
-          // })
-          // `
+          plitziSdkFederation: [
+            'plitziSdkFederation@host',
+            'plitziSdkFederation@https://cdn.plitzi.com/sdk/latest/plitzi-sdk-federation.js'
+          ]
         },
         exposes: {
           Plugin: './src/component/index.js'
         },
         shared: {
-          react: { singleton: true, requiredVersion: PACKAGE.dependencies.react },
-          'react-dom': { singleton: true, requiredVersion: PACKAGE.dependencies['react-dom'] },
-          'react-redux': { singleton: true, requiredVersion: PACKAGE.dependencies['react-redux'] }
+          react: { singleton: true, requiredVersion: false },
+          'react-dom': { singleton: true, requiredVersion: false },
+          'react-redux': { singleton: true, requiredVersion: false }
         }
       }),
       new webpack.DefinePlugin({
