@@ -1,9 +1,9 @@
 // Packages
 import React from 'react';
-import PlitziSdk, { PlitziContext } from '@plitzi/plitzi-sdk';
+import PlitziSdk from '@plitzi/plitzi-sdk';
 
 // Relatives
-import Demo, { DemoWithoutHOC } from '../src/components/Demo';
+import Demo from '../src/component';
 
 // Style
 import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
@@ -26,15 +26,15 @@ const schema = {
         selectorClass: '',
         name: 'Home'
       },
+      builder: {
+        itemsAllowed: [],
+        itemsNotAllowed: []
+      },
       definition: {
         label: 'Page',
         type: 'page',
         slug: '',
-        builder: {
-          isContainer: true,
-          itemsAllowed: [],
-          itemsNotAllowed: []
-        },
+        isContainer: true,
         items: ['5f47e7ca8294097d8b0a1715']
       },
       id: '5f544375ced80ed16f382b7b'
@@ -55,14 +55,6 @@ const schema = {
   ],
   pages: ['5f544375ced80ed16f382b7b']
 };
-
-const providerValue = { previewMode: true };
-
-export const withoutHoc = () => (
-  <PlitziContext.Provider value={providerValue}>
-    <DemoWithoutHOC PlitziContext={PlitziContext} internalProps={{}} content="Demo Component" />
-  </PlitziContext.Provider>
-);
 
 export const withHoc = () => (
   <PlitziSdk

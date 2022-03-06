@@ -6,8 +6,7 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
-
-const { ModuleFederationPlugin } = webpack.container;
+const PlitziPlugin = require('@plitzi/plitzi-webpack');
 
 const PACKAGE = require('./package.json');
 
@@ -30,7 +29,6 @@ const build = (env, args) => {
       chunkFilename: 'plitzi-plugin-chunk-[name].js'
     },
     watch,
-    target: 'web',
     devServer: {
       compress: true,
       hot: false, // until figure out whats going on
@@ -79,18 +77,9 @@ const build = (env, args) => {
       ]
     },
     plugins: [
-      new ModuleFederationPlugin({
-        name: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}Federation`,
-        filename: `plitzi-plugin-${PluginName}-federation.js`,
-        remotes: {
-          plitziSdkFederation: [
-            'plitziSdkFederation@host',
-            'plitziSdkFederation@https://cdn.plitzi.com/sdk/latest/plitzi-sdk-federation.js'
-          ]
-        },
-        exposes: {
-          Plugin: './src/component/index.js'
-        },
+      new PlitziPlugin({
+        isPlugin: true,
+        hostName: 'plitziSdkFederation',
         shared: {
           react: { singleton: true, requiredVersion: false },
           'react-dom': { singleton: true, requiredVersion: false },
@@ -125,6 +114,9 @@ const build = (env, args) => {
         test: /\.js$|\.css$|\.html$/,
         threshold: 1024,
         minRatio: 0.8
+      }),
+      new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1
       })
     ],
     stats: {

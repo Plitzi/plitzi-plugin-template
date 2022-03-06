@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const PlitziPlugin = require('@plitzi/plitzi-webpack');
 const PACKAGE = require('../package.json');
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
     '@storybook/preset-create-react-app'
   ],
   core: {
-    builder: "webpack5",
+    builder: 'webpack5'
   },
   webpackFinal: async (config, { configType }) => {
     config.resolve = {
@@ -20,7 +21,6 @@ module.exports = {
       symlinks: false,
       alias: {
         ...config.resolve.alias,
-        plitziElement: path.resolve('node_modules', '@plitzi', 'plitzi-element'),
         react: path.resolve('node_modules/react'),
         'react-dom': path.resolve('node_modules/react-dom'),
         'react-redux': path.resolve('node_modules/react-redux')
@@ -47,6 +47,15 @@ module.exports = {
 
     config.plugins = [
       ...config.plugins,
+      new PlitziPlugin({
+        isStorybook: true,
+        hostName: 'plitziSdkFederation',
+        shared: {
+          react: { singleton: true, requiredVersion: false, eager: true },
+          'react-dom': { singleton: true, requiredVersion: false, eager: true },
+          'react-redux': { singleton: true, requiredVersion: false, eager: true }
+        }
+      }),
       new MiniCssExtractPlugin({}),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(PACKAGE.version)
@@ -69,7 +78,7 @@ module.exports = {
                 {
                   loader: 'sass-loader',
                   options: {
-                    sourceMap: false
+                    sourceMap: true
                   }
                 }
               ]
