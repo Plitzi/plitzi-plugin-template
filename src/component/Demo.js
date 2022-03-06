@@ -1,16 +1,16 @@
 // Packages
-import React, { useContext } from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { withElement } from '@plitzi/plitzi-element';
+import usePlitziServiceContext from 'plitziSdkFederation/usePlitziServiceContext'; // eslint-disable-line
 
 // Styles
 import './Assets/index.scss';
 
-const Demo = props => {
-  const { className, internalProps, content, PlitziContext } = props;
-  const { ref, style } = internalProps;
-  const { previewMode } = useContext(PlitziContext);
+const Demo = forwardRef((props, ref) => {
+  const { className, internalProps, content } = props;
+  const { style } = internalProps;
+  const { previewMode } = usePlitziServiceContext();
 
   if (!previewMode) {
     return (
@@ -25,22 +25,18 @@ const Demo = props => {
       {content}
     </div>
   );
-};
+});
 
 Demo.defaultProps = {
   className: '',
-  PlitziContext: null,
   internalProps: null,
   content: 'Demo Component'
 };
 
 Demo.propTypes = {
   className: PropTypes.string,
-  PlitziContext: PropTypes.object,
   internalProps: PropTypes.object,
   content: PropTypes.string
 };
 
-export { Demo as DemoWithoutHOC };
-
-export default withElement(Demo);
+export default Demo;

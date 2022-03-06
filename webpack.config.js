@@ -5,20 +5,14 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
-const glob = require('glob');
 const webpack = require('webpack');
+const PlitziPlugin = require('@plitzi/plitzi-webpack');
 
 const PACKAGE = require('./package.json');
 
 const DESTINATION = path.resolve(__dirname, './dist/');
 
-const entry = glob.sync('./src/components/**/**/index.js').reduce((acc, value) => {
-  const valueArr = value.split('/');
-  const elementName = valueArr[valueArr.length - 2];
-  acc[elementName] = value;
-
-  return acc;
-}, {});
+const PluginName = 'demo';
 
 const build = (env, args) => {
   const devMode = args.mode !== 'production';
@@ -27,38 +21,23 @@ const build = (env, args) => {
   const watch = env.watch || false;
 
   const modules = {
-    entry: { ...entry, All: './src/index.js' },
+    entry: { [PluginName]: './src/component/index.js' },
     output: {
       path: DESTINATION,
+      library: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
       filename: 'plitzi-plugin-[name].js',
-      chunkFilename: '[name].extras.js',
-      library: 'PlitziPlugin[name]',
-      libraryTarget: 'umd',
-      globalObject: "(typeof self !== 'undefined' ? self : this)"
+      chunkFilename: 'plitzi-plugin-chunk-[name].js'
     },
     watch,
-    externals: {
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-        umd: 'react'
+    devServer: {
+      compress: true,
+      hot: false, // until figure out whats going on
+      liveReload: true,
+      historyApiFallback: true,
+      static: {
+        directory: path.join(__dirname, 'dist')
       },
-      'react-redux': {
-        root: 'ReactRedux',
-        commonjs2: 'react-redux',
-        commonjs: 'react-redux',
-        amd: 'react-redux',
-        umd: 'react-redux'
-      },
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-        umd: 'react-dom'
-      }
+      port: 3999
     },
     module: {
       rules: [
@@ -98,106 +77,52 @@ const build = (env, args) => {
       ]
     },
     plugins: [
+      new PlitziPlugin({
+        isPlugin: true,
+        hostName: 'plitziSdkFederation',
+        shared: {
+          react: { singleton: true, requiredVersion: false },
+          'react-dom': { singleton: true, requiredVersion: false },
+          'react-redux': { singleton: true, requiredVersion: false }
+        }
+      }),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(PACKAGE.version)
       }),
       new MiniCssExtractPlugin({
-        filename: 'plitzi-plugin-[name].css'
+        filename: 'plitzi-plugin-[name].css',
+        chunkFilename: 'plitzi-plugin-chunk-[name].css'
       }),
       new WebpackAssetsManifest({
+        output: 'plugin-manifest.json',
         integrity: true,
         integrityHashes: ['sha384'],
         sortManifest: false,
-        assets: {
-          accessGroup: ['auser'],
+        transform: assets => ({
+          accessGroup: [],
           author: 'Carlos Rodriguez <crodriguez@plitzi.com>',
           created: '',
           updated: '',
-          widgetArea: 'main',
-          widgetName: 'widget',
-          widgetVersion: PACKAGE.version
-        },
-        transform: (assets, manifest) => {
-          const customAssets = { assets: {} };
-          [
-            'accessGroup',
-            'author',
-            'created',
-            'updated',
-            'widgetArea',
-            'widgetName',
-            'widgetPath',
-            'widgetVersion'
-          ].forEach(asset => {
-            customAssets[asset] = assets[asset];
-            delete assets[asset];
-          });
-
-          customAssets.assets = assets;
-
-          return customAssets;
-        }
+          pluginVersion: PACKAGE.version,
+          assets
+        })
       }),
-      new WebpackAssetsManifest({
-        output: 'app.json',
-        integrity: true,
-        integrityHashes: ['sha384'],
-        sortManifest: false,
-        assets: {
-          accessGroup: ['auser'],
-          author: 'Carlos Rodriguez <>',
-          created: '',
-          updated: '',
-          widgetArea: 'main',
-          widgetName: 'widget',
-          widgetVersion: PACKAGE.version
-        },
-        transform: (assets, manifest) => {
-          const customAssets = { assets: {} };
-          [
-            'accessGroup',
-            'author',
-            'created',
-            'updated',
-            'widgetArea',
-            'widgetName',
-            'widgetPath',
-            'widgetVersion'
-          ].forEach(asset => {
-            customAssets[asset] = assets[asset];
-            delete assets[asset];
-          });
-
-          customAssets.assets = assets;
-
-          return customAssets;
-        }
+      new CompressionPlugin({
+        algorithm: 'gzip',
+        filename: onlyGzip ? '[path][base]' : '[path][base].gz',
+        deleteOriginalAssets: onlyGzip,
+        test: /\.js$|\.css$|\.html$/,
+        threshold: 1024,
+        minRatio: 0.8
+      }),
+      new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1
       })
     ],
     stats: {
       colors: true
     }
   };
-
-  if (onlyGzip) {
-    modules.plugins.push(
-      new CompressionPlugin({
-        algorithm: 'gzip',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8
-      })
-    );
-  } else {
-    modules.plugins.push(
-      new CompressionPlugin({
-        algorithm: 'gzip',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8
-      })
-    );
-  }
 
   if (devMode) {
     modules.devtool = 'source-map';
@@ -216,18 +141,6 @@ const build = (env, args) => {
         })
       ]
     };
-
-    // Optional Brotli algoritm require Node +12
-    // modules.plugins.push(
-    //   new CompressionPlugin({
-    //     filename: '[path].br[query]',
-    //     algorithm: 'brotliCompress',
-    //     test: /\.(js|css|html|svg)$/,
-    //     compressionOptions: { level: 11 },
-    //     threshold: 10240,
-    //     minRatio: 0.8
-    //   })
-    // );
   }
 
   if (onlyAnalyze) {

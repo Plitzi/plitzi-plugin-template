@@ -1,4 +1,4 @@
 // Relatives
-import Demo from './components/Demo';
+import Demo from './component';
 
 export { Demo };
