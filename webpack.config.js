@@ -30,6 +30,7 @@ const build = (env, args) => {
     },
     watch,
     devServer: {
+      allowedHosts: 'all',
       compress: true,
       hot: false, // until figure out whats going on
       liveReload: true,
