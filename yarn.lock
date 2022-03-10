@@ -1833,10 +1833,10 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plitzi/plitzi-sdk@^0.3.6":
-  version "0.3.6"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.3.6/6e4ecc600ee28fa48dd9861f5502314f9d63017db68573fda8cdf946728b4b0d#cc33448e6980da3db1ecb275f40911f31e266cd5"
-  integrity sha512-CQ5tffE608EQscmrc92fFyzodcXbq4CUwx7eu4GTgkO7ElwdQMF0qVd201DaOWC9Zk3ws1gypTTATHXX7qA4KA==
+"@plitzi/plitzi-sdk@^0.3.8":
+  version "0.3.8"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.3.8/60d9b8f0773e4576bd75629a3874f47432a342aee6bfe734dd6588ddaac16fd9#a545e615d81dffbb3c119131c91f952dc6b9cce0"
+  integrity sha512-5BOqQprO7pAv5UJIWVtXipNdSikWJI0HmIZcqXjSWvnwhxRkxyWr3r2QL9uqqNsvcKyHcK5Iz9NWCPpHQRuiQA==
   dependencies:
     "@apollo/client" "^3.3.19"
     classnames "^2.3.1"
@@ -1855,7 +1855,7 @@
   resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-webpack/0.1.3/373ea2b8349b4aa60714c890b13ee2fe728aeeb13edf9fead463d4de89ddc3b7#6d3710d012a8c13350b8a64366c9c1ac195f3525"
   integrity sha512-cOBULARt6PH9Fln6EjAB4Xw0el1G1ZCkWkYaRbMrOEaRluwGsXDh5a58KJFQ9Ykaph6UYij8mqffAMLo7peDcA==
 
-"@pmmmwh/react-refresh-webpack-plugin@^0.5.1", "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
+"@pmmmwh/react-refresh-webpack-plugin@^0.5.1", "@pmmmwh/react-refresh-webpack-plugin@^0.5.3", "@pmmmwh/react-refresh-webpack-plugin@^0.5.4":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.4.tgz#df0d0d855fc527db48aac93c218a0bf4ada41f99"
   integrity sha512-zZbZeHQDnoTlt2AF+diQT0wsSXpvWiaIOZwBRdltNFhG1+I3ozyaw7U/nBiUwyJ0D+zwdXp0E3bWOl38Ag2BMw==

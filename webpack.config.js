@@ -7,6 +7,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const PlitziPlugin = require('@plitzi/plitzi-webpack');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const PACKAGE = require('./package.json');
 
@@ -31,9 +32,9 @@ const build = (env, args) => {
     watch,
     devServer: {
       allowedHosts: 'all',
-      compress: true,
-      hot: false, // until figure out whats going on
-      liveReload: true,
+      compress: false,
+      hot: true,
+      liveReload: false,
       historyApiFallback: true,
       static: {
         directory: path.join(__dirname, 'dist')
@@ -49,7 +50,11 @@ const build = (env, args) => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]], // [classic] will disable new JSX compiler and [automatic] will enable it
-              plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
+              plugins: [
+                '@babel/plugin-proposal-class-properties',
+                '@babel/plugin-transform-runtime',
+                devMode && 'react-refresh/babel'
+              ].filter(Boolean)
             }
           }
         },
@@ -127,6 +132,7 @@ const build = (env, args) => {
 
   if (devMode) {
     modules.devtool = 'source-map';
+    modules.plugins.push(new ReactRefreshWebpackPlugin());
   } else {
     modules.plugins.push(new CleanWebpackPlugin());
     modules.optimization = {
