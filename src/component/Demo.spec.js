@@ -5,9 +5,9 @@ import { render } from '@testing-library/react';
 // Relatives
 import Demo from './Demo';
 
-jest.mock('plitziSdkFederation/usePlitziServiceContext')
+jest.mock('plitziSdkFederation/usePlitziServiceContext');
 
-describe('Dummy', () => {
+describe('Demo', () => {
   it('should render successfully', () => {
     const BaseElement = render(<Demo internalProps={{}} />);
 
