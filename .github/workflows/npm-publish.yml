@@ -64,28 +64,27 @@ jobs:
       - name: Yarn Scss Lint
         run: yarn lint-style
 
-  # tests:
-  #   if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master')
-  #   needs: lint
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
+  tests:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 16
-  #         registry-url: https://npm.pkg.github.com/plitzi
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/plitzi
 
-  #     - name: Restore Cache
-  #       uses: actions/cache@v2
-  #       env:
-  #         cache-name: cache-node-modules
-  #       with:
-  #         path: '**/node_modules'
-  #         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Restore Cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
 
-  #     - name: Yarn Tests
-  #       run: yarn test:ci
+      - name: Yarn Tests
+        run: yarn test
 
   publish-github:
     if: github.event_name == 'release' && startsWith(github.ref, 'refs/tags/v')

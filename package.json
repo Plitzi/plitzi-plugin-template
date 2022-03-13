@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,8 +14,8 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "react": "^18.0.0-rc",
-    "react-dom": "^18.0.0-rc",
+    "react": "^18.0.0-rc.2",
+    "react-dom": "^18.0.0-rc.2",
     "react-redux": "^7.2.6"
   },
   "devDependencies": {
@@ -40,9 +40,9 @@
     "@storybook/manager-webpack5": "^6.4.9",
     "@storybook/node-logger": "^6.4.9",
     "@storybook/preset-create-react-app": "^4.0.0",
-    "@storybook/react": "^6.5.0-alpha.42",
+    "@storybook/react": "^6.5.0-alpha.47",
     "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^13.0.0-alpha.6",
     "@testing-library/user-event": "^13.5.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -81,6 +81,7 @@
   },
   "scripts": {
     "start": "webpack serve --mode development",
+    "test": "jest",
     "lint": "eslint ./src",
     "lint-style": "stylelint \"**/*.scss\"",
     "lint-style:fix": "stylelint \"**/*.scss\" --fix",
