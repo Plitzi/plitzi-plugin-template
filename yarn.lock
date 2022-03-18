@@ -1833,10 +1833,10 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plitzi/plitzi-sdk@^0.3.8":
-  version "0.3.8"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.3.8/60d9b8f0773e4576bd75629a3874f47432a342aee6bfe734dd6588ddaac16fd9#a545e615d81dffbb3c119131c91f952dc6b9cce0"
-  integrity sha512-5BOqQprO7pAv5UJIWVtXipNdSikWJI0HmIZcqXjSWvnwhxRkxyWr3r2QL9uqqNsvcKyHcK5Iz9NWCPpHQRuiQA==
+"@plitzi/plitzi-sdk@^0.3.9":
+  version "0.3.9"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-sdk/0.3.9/af60f63f8db1fbac62741e10d65edde137f7a4020b87a656d80776461ed86d56#5e0cf509571f509444795088cefdd9f8dde1dbd4"
+  integrity sha512-WrpbwkJC9LGKaCBne4an1e5xbjoGsR/v4FzJqnFjsWPGMoqJOnxg1lbE4kwmlwncjrkOjyt6kENLzLvxx8gH2g==
   dependencies:
     "@apollo/client" "^3.3.19"
     classnames "^2.3.1"
