@@ -13532,18 +13532,10 @@ react-textarea-autosize@^8.3.0:
     use-composed-ref "^1.0.0"
     use-latest "^1.0.0"
 
-react@^18.0.0-rc:
-  version "18.0.0-rc.0-next-f2a59df48-20211208"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.0.0-rc.0-next-f2a59df48-20211208.tgz#d53a505c35ad7cd416b6dcef81bc2fe7dc4cb554"
-  integrity sha512-7C9NnHiOJl/qYhP8POXy53+3C4M6MGs7DIEYbL5jHnYZ0VTk/+dZGFJYiGx+Zn+HKXk7hW+mMTWjvJr2EVD16A==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
-react@^18.0.0-rc.2:
-  version "18.0.0-rc.2-next-b9de50d2f-20220308"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.0.0-rc.2-next-b9de50d2f-20220308.tgz#817d40520b76c3f3e8314eeda1abf85d9070465c"
-  integrity sha512-1RpONBLI/vgKN/kdq0DtPxrgXHS5OXCHbzXWXk2RcLRjlbBiqmAPUIpCq7x+02WhYQkgA6D0iRJo4NJ9fZMCGQ==
+react@^18.0.0-rc, react@^18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
+  integrity sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==
   dependencies:
     loose-envify "^1.1.0"
 
