@@ -15,7 +15,7 @@
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
     "react": "^18.0.0-rc.2",
-    "react-dom": "^18.0.0-rc.2",
+    "react-dom": "^18.1.0",
     "react-redux": "^7.2.6"
   },
   "devDependencies": {
