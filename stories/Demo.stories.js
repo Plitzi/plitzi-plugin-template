@@ -5,9 +5,6 @@ import PlitziSdk from '@plitzi/plitzi-sdk';
 // Relatives
 import Demo from '../src/component';
 
-// Style
-import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
-
 export default {
   title: 'Example/Demo',
   decorators: [],

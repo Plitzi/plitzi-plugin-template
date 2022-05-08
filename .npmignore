@@ -17,5 +17,3 @@ public
 .stylelintrc
 index.hbs
 webpack.config.*
-WidgetEntryPoint.js
-WidgetEntryPoint-sdk.js

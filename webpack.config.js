@@ -70,7 +70,8 @@ const build = (env, args) => {
               loader: MiniCssExtractPlugin.loader,
               options: {}
             },
-            'css-loader',
+            { loader: 'css-loader', options: {} },
+            'postcss-loader',
             {
               loader: 'sass-loader',
               options: {

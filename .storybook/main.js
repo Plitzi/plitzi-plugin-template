@@ -6,12 +6,7 @@ const PACKAGE = require('../package.json');
 
 module.exports = {
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-controls',
-    '@storybook/preset-create-react-app'
-  ],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-controls'],
   core: {
     builder: 'webpack5'
   },
@@ -27,6 +22,7 @@ module.exports = {
       }
     };
 
+    config.module.rules = config.module.rules.filter(rule => rule.sideEffects === undefined);
     config.module.rules.push({
       test: /(\.jsx|\.js)$/,
       exclude: /(node_modules|bower_components)/,
@@ -40,8 +36,21 @@ module.exports = {
     });
 
     config.module.rules.push({
-      test: /\.(png|jpg|gif|svg|...)$/,
-      loader: 'url-loader',
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {}
+        },
+        { loader: 'css-loader', options: {} },
+        'postcss-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
+        }
+      ],
       exclude: /(node_modules|bower_components)/
     });
 
@@ -61,36 +70,6 @@ module.exports = {
         VERSION: JSON.stringify(PACKAGE.version)
       })
     ];
-
-    config.module.rules.map(rule => {
-      if (rule.oneOf) {
-        rule.oneOf = rule.oneOf.slice().map(subRule => {
-          if (subRule.test instanceof RegExp && subRule.test.test('.scss')) {
-            return {
-              ...subRule,
-              use: [
-                // ...subRule.use,
-                {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {}
-                },
-                'css-loader',
-                {
-                  loader: 'sass-loader',
-                  options: {
-                    sourceMap: true
-                  }
-                }
-              ]
-            };
-          }
-
-          return subRule;
-        });
-      }
-
-      return rule;
-    });
 
     // Return the altered config
     return config;
