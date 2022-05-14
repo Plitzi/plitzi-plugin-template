@@ -4,6 +4,7 @@ import PlitziSdk from '@plitzi/plitzi-sdk';
 
 // Relatives
 import Demo from '../src/component';
+import Settings from '../src/component/Settings';
 
 export default {
   title: 'Example/Demo',
@@ -100,3 +101,11 @@ export const withHocNoIframe = () => (
     <PlitziSdk.Plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );
+
+export const componentSettings = args => {
+  return <Settings {...args} />;
+};
+
+componentSettings.args = {
+  ...Settings.defaultProps
+};
