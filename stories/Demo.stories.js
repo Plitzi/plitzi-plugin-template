@@ -1,6 +1,6 @@
 // Packages
 import React from 'react';
-import PlitziSdk from '@plitzi/plitzi-sdk';
+import PlitziSdk, { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 
 // Relatives
 import Demo from '../src/component';
@@ -97,9 +97,15 @@ export const withHocNoPreview = () => (
 );
 
 export const withHocNoIframe = () => (
-  <PlitziSdk offlineMode iframeMode={false} offlineData={{ schema }}>
+  <PlitziSdk offlineMode renderMode="raw" offlineData={{ schema }}>
     <PlitziSdk.Plugin renderType="demo" component={Demo} />
   </PlitziSdk>
+);
+
+export const componentRender = () => (
+  <PlitziServiceProvider value={{ previewMode: true }}>
+    <Demo />
+  </PlitziServiceProvider>
 );
 
 export const componentSettings = args => {
