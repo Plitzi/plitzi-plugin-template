@@ -29,7 +29,7 @@ const Demo = forwardRef((props, ref) => {
 
 Demo.defaultProps = {
   className: '',
-  internalProps: null,
+  internalProps: {},
   content: 'Demo Component'
 };
 
