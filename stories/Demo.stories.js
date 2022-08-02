@@ -54,23 +54,18 @@ const schema = {
 };
 
 export const withHoc = () => (
-  <PlitziSdk
-    offlineMode
-    offlineData={{ schema }}
-    // storybook compiled assets are under /main.css
-    externalAssets={[
-      {
-        type: 'link',
-        id: 'demo',
-        params: {
+  <PlitziSdk offlineMode offlineData={{ schema }}>
+    <PlitziSdk.Plugin
+      renderType="demo"
+      component={Demo}
+      assets={[
+        {
           type: 'text/css',
           href: '/main.css',
           rel: 'stylesheet'
         }
-      }
-    ]}
-  >
-    <PlitziSdk.Plugin renderType="demo" component={Demo} />
+      ]}
+    />
   </PlitziSdk>
 );
 
@@ -79,20 +74,18 @@ export const withHocNoPreview = () => (
     offlineMode
     offlineData={{ schema }}
     previewMode={false}
-    // storybook compiled assets are under /main.css
-    externalAssets={[
-      {
-        type: 'link',
-        id: 'demo',
-        params: {
+  >
+    <PlitziSdk.Plugin
+      renderType="demo"
+      component={Demo}
+      assets={[
+        {
           type: 'text/css',
           href: '/main.css',
           rel: 'stylesheet'
         }
-      }
-    ]}
-  >
-    <PlitziSdk.Plugin renderType="demo" component={Demo} />
+      ]}
+    />
   </PlitziSdk>
 );
 
