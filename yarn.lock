@@ -1781,10 +1781,10 @@
     react-router-dom "^6.2.2"
     tinycolor2 "^1.4.2"
 
-"@plitzi/plitzi-webpack@^0.1.3":
-  version "0.1.3"
-  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-webpack/0.1.3/373ea2b8349b4aa60714c890b13ee2fe728aeeb13edf9fead463d4de89ddc3b7#6d3710d012a8c13350b8a64366c9c1ac195f3525"
-  integrity sha512-cOBULARt6PH9Fln6EjAB4Xw0el1G1ZCkWkYaRbMrOEaRluwGsXDh5a58KJFQ9Ykaph6UYij8mqffAMLo7peDcA==
+"@plitzi/plitzi-webpack@^0.1.5":
+  version "0.1.5"
+  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-webpack/0.1.5/8314d7bf0aac7ecceaa32bcfa47cd67fc383a830#8314d7bf0aac7ecceaa32bcfa47cd67fc383a830"
+  integrity sha512-RaemWY9k1h2h0pbeBIFYwAQAC8UfvLLWO3W4LahyaDb6NNe9ufT9X4Rsykad4NhbmBZUfzC/mI25IHfJ3WXN7g==
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3", "@pmmmwh/react-refresh-webpack-plugin@^0.5.4":
   version "0.5.4"
