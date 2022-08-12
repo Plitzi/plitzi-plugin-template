@@ -53,7 +53,7 @@ const build = (env, args) => {
               plugins: [
                 '@babel/plugin-proposal-class-properties',
                 '@babel/plugin-transform-runtime',
-                devMode && 'react-refresh/babel'
+                env.WEBPACK_SERVE && 'react-refresh/babel'
               ].filter(Boolean)
             }
           }
@@ -131,9 +131,12 @@ const build = (env, args) => {
     }
   };
 
+  if (env.WEBPACK_SERVE) {
+    modules.plugins.push(new ReactRefreshWebpackPlugin());
+  }
+
   if (devMode) {
     modules.devtool = 'source-map';
-    modules.plugins.push(new ReactRefreshWebpackPlugin());
   } else {
     modules.plugins.push(new CleanWebpackPlugin());
     modules.optimization = {
