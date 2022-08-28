@@ -1,5 +1,5 @@
 // Packages
-import React from 'react';
+import React, { useState } from 'react';
 import PlitziSdk, { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 
 // Relatives
@@ -102,7 +102,13 @@ export const componentRender = () => (
 );
 
 export const componentSettings = args => {
-  return <Settings {...args} />;
+  const [props, setProps] = useState({});
+
+  const onUpdate = (key, value) => {
+    setProps(state => ({ ...state, [key]: value }));
+  };
+
+  return <Settings {...args} {...props} onUpdate={onUpdate} />;
 };
 
 componentSettings.args = {
