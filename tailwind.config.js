@@ -33,6 +33,7 @@ module.exports = {
     }
   },
   plugins: [
+    require('@tailwindcss/forms'),
     plugin(function ({ addVariant, e }) {
       addVariant('not-first', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
