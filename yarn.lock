@@ -1747,13 +1747,13 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plitzi/plitzi-sdk@^0.3.34":
-  version "0.3.34"
-  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-sdk/0.3.34/c1c281e428e46874025b5fd0cf672e97602116b0#c1c281e428e46874025b5fd0cf672e97602116b0"
-  integrity sha512-+aZpfFct9n5TmDSnHLPo2TAhzCAMfkiLUTiN629ibI+VJ7ZmfD79FiZwDxN6K5DWBtDEewQnXB7UDc9oVKQxzQ==
+"@plitzi/plitzi-sdk@^0.3.38":
+  version "0.3.38"
+  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-sdk/0.3.38/a6cd29aa4cf4235bfc02ce3782628901ab7a6279#a6cd29aa4cf4235bfc02ce3782628901ab7a6279"
+  integrity sha512-4YOY7NovS09B6GV4ebEUTYYzri/HFJQiyDHcbe7z/5IPoNnZ326L10zEFI4GjzgiQduHvFXo+lYbcJ4KOyZ2yQ==
   dependencies:
     "@apollo/client" "^3.3.19"
-    "@plitzi/plitzi-ui-components" "0.0.13"
+    "@plitzi/plitzi-ui-components" "0.0.17"
     classnames "^2.3.1"
     dompurify "^2.3.8"
     graphql "^15.4.0"
@@ -1765,10 +1765,10 @@
     react-router-dom "^6.2.2"
     redux-thunk "^2.3.0"
 
-"@plitzi/plitzi-ui-components@0.0.13":
-  version "0.0.13"
-  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-ui-components/0.0.13/2de29b5ab3932f607ca08603ed9488205192ed78#2de29b5ab3932f607ca08603ed9488205192ed78"
-  integrity sha512-95loB2r10VmrhEQ6DCMv3uZpPO0CpZIZZsdfAGFRAaOh4oUAnG5G/FBHd4SyqjvC4sfUTzh6zBSKkLSI6Ye+Fg==
+"@plitzi/plitzi-ui-components@0.0.17":
+  version "0.0.17"
+  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-ui-components/0.0.17/a7577edf72d13d779af229689387866f242bd3a5#a7577edf72d13d779af229689387866f242bd3a5"
+  integrity sha512-BMA3pH0iTkH9WrgknrEPxCGGMTqz8+xpFnrGEswg9Ez+CmEcvxN61+6JiaQOxycAM6t6JIXfh9hZuy6NTkrRKA==
   dependencies:
     axios "^0.21.1"
     classnames "^2.3.1"
