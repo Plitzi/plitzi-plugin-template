@@ -3,4 +3,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@plitzi/plitzi-sdk/dist/plitzi-sdk.css';
+@import '@plitzi/plitzi-sdk/plitzi-sdk.css';

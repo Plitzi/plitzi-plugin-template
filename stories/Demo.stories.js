@@ -70,11 +70,7 @@ export const withHoc = () => (
 );
 
 export const withHocNoPreview = () => (
-  <PlitziSdk
-    offlineMode
-    offlineData={{ schema }}
-    previewMode={false}
-  >
+  <PlitziSdk offlineMode offlineData={{ schema }} previewMode={false}>
     <PlitziSdk.Plugin
       renderType="demo"
       component={Demo}
@@ -100,6 +96,10 @@ export const componentRender = () => (
     <Demo />
   </PlitziServiceProvider>
 );
+
+componentRender.args = {
+  ...Demo.defaultProps
+};
 
 export const componentSettings = args => {
   const [props, setProps] = useState({});
