@@ -14,14 +14,14 @@ const Demo = forwardRef((props, ref) => {
 
   if (!previewMode) {
     return (
-      <div ref={ref} style={style} className={classNames('plitzi-component__demo text-red-500', { [className]: className })}>
+      <div ref={ref} style={style} className={classNames('plitzi-component__demo text-red-500', className)}>
         Hi, this is a Plitzi demo component Preview Mode False
       </div>
     );
   }
 
   return (
-    <div ref={ref} style={style} className={classNames('plitzi-component__demo', { [className]: className })}>
+    <div ref={ref} style={style} className={classNames('plitzi-component__demo', className)}>
       {content}
     </div>
   );
