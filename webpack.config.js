@@ -27,7 +27,11 @@ const build = (env, args) => {
       path: DESTINATION,
       library: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
       filename: 'plitzi-plugin-[name].js',
-      chunkFilename: 'plitzi-plugin-chunk-[name].js'
+      chunkFilename: 'plitzi-plugin-chunk-[name].js',
+      libraryTarget: 'umd',
+      crossOriginLoading: 'anonymous',
+      globalObject: "(typeof self !== 'undefined' ? self : this)",
+      publicPath: 'auto'
     },
     watch,
     devServer: {
