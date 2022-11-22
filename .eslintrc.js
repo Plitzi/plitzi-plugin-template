@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -26,6 +28,14 @@ module.exports = {
     jQuery: true,
     $: true,
     VERSION: true
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@plitzi/plitzi-ui', path.resolve('./node_modules/@plitzi/plitzi-ui/dist/components')]],
+        extensions: ['.ts', '.js', '.jsx', '.json', '.stores.js']
+      }
+    }
   },
   plugins: ['react'],
   rules: {

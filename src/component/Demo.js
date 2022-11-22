@@ -10,7 +10,9 @@ import './Assets/index.scss';
 const Demo = forwardRef((props, ref) => {
   const { className, internalProps, content } = props;
   const { style } = internalProps;
-  const { previewMode } = usePlitziServiceContext();
+  const {
+    settings: { previewMode }
+  } = usePlitziServiceContext();
 
   if (!previewMode) {
     return (
