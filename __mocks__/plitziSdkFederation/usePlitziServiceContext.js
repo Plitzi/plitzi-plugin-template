@@ -3,7 +3,7 @@ const { createContext } = require('react');
 const NavigationContext = createContext({});
 const CmsContext = createContext({});
 const plitziSdkFederation = createContext({});
-const DataSourceContext = createContext({});
+const DataSourceContext = createContext({ useDataSource: () => ({}) });
 
 module.exports = {
   __esModule: true,
