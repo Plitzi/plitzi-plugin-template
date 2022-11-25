@@ -92,7 +92,7 @@ export const withHocNoIframe = () => (
 );
 
 export const componentRender = () => (
-  <PlitziServiceProvider value={{ previewMode: true }}>
+  <PlitziServiceProvider value={{ settings: { previewMode: true } }}>
     <Demo />
   </PlitziServiceProvider>
 );
