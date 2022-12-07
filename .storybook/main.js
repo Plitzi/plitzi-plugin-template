@@ -17,8 +17,7 @@ module.exports = {
       alias: {
         ...config.resolve.alias,
         react: path.resolve('node_modules/react'),
-        'react-dom': path.resolve('node_modules/react-dom'),
-        'react-redux': path.resolve('node_modules/react-redux')
+        'react-dom': path.resolve('node_modules/react-dom')
       }
     };
 
@@ -61,8 +60,7 @@ module.exports = {
         hostName: 'plitziSdkFederation',
         shared: {
           react: { singleton: true, requiredVersion: false, eager: true },
-          'react-dom': { singleton: true, requiredVersion: false, eager: true },
-          'react-redux': { singleton: true, requiredVersion: false, eager: true }
+          'react-dom': { singleton: true, requiredVersion: false, eager: true }
         }
       }),
       new MiniCssExtractPlugin({}),

@@ -93,8 +93,7 @@ const build = (env, args) => {
         hostName: 'plitziSdkFederation',
         shared: {
           react: { singleton: true, requiredVersion: false },
-          'react-dom': { singleton: true, requiredVersion: false },
-          'react-redux': { singleton: true, requiredVersion: false }
+          'react-dom': { singleton: true, requiredVersion: false }
         }
       }),
       new webpack.DefinePlugin({
