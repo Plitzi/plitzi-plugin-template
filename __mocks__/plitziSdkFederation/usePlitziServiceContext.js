@@ -1,7 +1,7 @@
 const { createContext } = require('react');
 
 const NavigationContext = createContext({});
-const CmsContext = createContext({});
+const CollectionContext = createContext({});
 const plitziSdkFederation = createContext({});
 const DataSourceContext = createContext({ useDataSource: () => ({}) });
 
@@ -10,7 +10,7 @@ module.exports = {
   default: jest.fn(() => ({
     settings: {},
     utils: { getWindow: () => {} },
-    contexts: { CmsContext, NavigationContext, DataSourceContext }
+    contexts: { CollectionContext, NavigationContext, DataSourceContext }
   })),
   PlitziServiceProvider: plitziSdkFederation.Provider
 };
