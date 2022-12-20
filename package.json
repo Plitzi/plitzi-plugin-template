@@ -33,7 +33,7 @@
     "@plitzi/plitzi-webpack": "^0.1.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@storybook/addon-actions": "^6.5.14",
-    "@storybook/addon-controls": "^6.5.14",
+    "@storybook/addon-controls": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-links": "^6.5.14",
     "@storybook/builder-webpack5": "^6.5.14",
