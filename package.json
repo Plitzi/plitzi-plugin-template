@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@babel/compat-data": "^7.20.10",
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/helper-builder-react-jsx-experimental": "^7.10.5",
     "@babel/helper-validator-identifier": "^7.19.1",
