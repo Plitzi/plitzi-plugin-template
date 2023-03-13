@@ -55,14 +55,7 @@ module.exports = {
 
     config.plugins = [
       ...config.plugins,
-      new PlitziPlugin({
-        isStorybook: true,
-        hostName: 'plitziSdkFederation',
-        shared: {
-          react: { singleton: true, requiredVersion: false, eager: true },
-          'react-dom': { singleton: true, requiredVersion: false, eager: true }
-        }
-      }),
+      new PlitziPlugin({ isStorybook: true }),
       new MiniCssExtractPlugin({}),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(PACKAGE.version)

@@ -28,7 +28,7 @@ const build = (env, args) => {
       library: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
       filename: 'plitzi-plugin-[name].js',
       chunkFilename: 'plitzi-plugin-chunk-[name].js',
-      libraryTarget: 'umd',
+      libraryTarget: 'plitzi',
       crossOriginLoading: 'anonymous',
       globalObject: "(typeof self !== 'undefined' ? self : this)",
       publicPath: 'auto'
@@ -88,14 +88,7 @@ const build = (env, args) => {
       ]
     },
     plugins: [
-      new PlitziPlugin({
-        isPlugin: true,
-        hostName: 'plitziSdkFederation',
-        shared: {
-          react: { singleton: true, requiredVersion: false },
-          'react-dom': { singleton: true, requiredVersion: false }
-        }
-      }),
+      new PlitziPlugin({ isPlugin: true }),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(PACKAGE.version)
       }),
