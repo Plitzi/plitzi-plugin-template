@@ -14,7 +14,7 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-sdk": "^0.6.20",
+    "@plitzi/plitzi-sdk": "^0.6.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -30,7 +30,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
-    "@plitzi/plitzi-webpack": "^0.1.16",
+    "@plitzi/plitzi-webpack": "^0.1.17",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-controls": "^6.5.16",

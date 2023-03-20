@@ -2036,10 +2036,10 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plitzi/plitzi-sdk@^0.6.20":
-  version "0.6.20"
-  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-sdk/0.6.20/e877e10275f8ae6bf10d60a2d15652da7da6de9d#e877e10275f8ae6bf10d60a2d15652da7da6de9d"
-  integrity sha512-lAc30cyYjkuEronIOkmg2QLqKODPAE1Y8H+OhIikGoDxPnMFX/Zj7LRpgN19mfFrsiWCKttMRzNGnbFOSghBbA==
+"@plitzi/plitzi-sdk@^0.6.21":
+  version "0.6.21"
+  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-sdk/0.6.21/4ed82008d4865c6369d831a5941fc30e04b05b17#4ed82008d4865c6369d831a5941fc30e04b05b17"
+  integrity sha512-Qx9U1IhrWx8CFK9LVJZKVDJYdHOkNf1G405E2SGZZ9F7s57+pF6yAIOLeblhurCEhXN8/+VUwlVhuSm1oCDepg==
   dependencies:
     "@apollo/client" "^3.7.10"
     "@plitzi/plitzi-ui-components" "0.1.2"
@@ -2072,10 +2072,10 @@
     react-router-dom "^6.8.1"
     tinycolor2 "^1.6.0"
 
-"@plitzi/plitzi-webpack@^0.1.16":
-  version "0.1.16"
-  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-webpack/0.1.16/13b14b9a9380139f90d3eab088c2c230f616ff9d#13b14b9a9380139f90d3eab088c2c230f616ff9d"
-  integrity sha512-JjvEYcVrgAytpSXzz+RhazEn04FsouMTn6fHh5DXIuEh935bAIikp0TGY2bJhACmcpE+7QkWsufVrLDNfZ3hLg==
+"@plitzi/plitzi-webpack@^0.1.17":
+  version "0.1.17"
+  resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-webpack/0.1.17/7206dc076ca67f3e49220ea259709e10172f9ca9#7206dc076ca67f3e49220ea259709e10172f9ca9"
+  integrity sha512-HwInupYGLb5G4Gf7G59Pvq7s40jOsX6q1R/gh6sELBLMi54vgdgerGDFgJlK5gBQHsFbwgcuo6HX3/vhGn1Sog==
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.10", "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.10"
@@ -9116,6 +9116,11 @@ is-extglob@^2.1.0, is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
   integrity sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==
+
+is-finite@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-finite/-/is-finite-1.1.0.tgz#904135c77fb42c0641d6aa1bcdbc4daa8da082f3"
+  integrity sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==
 
 is-fullwidth-code-point@^3.0.0:
   version "3.0.0"

@@ -6,8 +6,6 @@ import { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 // Relatives
 import Demo from './Demo';
 
-// jest.mock('plitziSdkFederation/usePlitziServiceContext');
-
 describe('Demo', () => {
   it('should render successfully', () => {
     const ref = { current: null };
