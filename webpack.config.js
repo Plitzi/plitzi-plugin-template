@@ -28,7 +28,7 @@ const build = (env, args) => {
       library: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
       filename: 'plitzi-plugin-[name].js',
       chunkFilename: 'plitzi-plugin-chunk-[name].js',
-      libraryTarget: 'plitzi',
+      libraryTarget: 'umd',
       crossOriginLoading: 'anonymous',
       globalObject: "(typeof self !== 'undefined' ? self : this)",
       publicPath: 'auto'
@@ -141,7 +141,7 @@ const build = (env, args) => {
         new TerserPlugin({
           terserOptions: {
             output: {
-              comments: false
+              comments: /(webpackIgnore:true|webpackIgnore: true)/
             }
           },
           extractComments: false

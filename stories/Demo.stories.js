@@ -1,5 +1,5 @@
 // Packages
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PlitziSdk, { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 
 // Relatives
@@ -91,11 +91,15 @@ export const withHocNoIframe = () => (
   </PlitziSdk>
 );
 
-export const componentRender = () => (
-  <PlitziServiceProvider value={{ settings: { previewMode: true } }}>
-    <Demo />
-  </PlitziServiceProvider>
-);
+export const componentRender = () => {
+  const ref = useRef();
+
+  return (
+    <PlitziServiceProvider value={{ settings: { previewMode: true } }}>
+      <Demo ref={ref} />
+    </PlitziServiceProvider>
+  );
+};
 
 componentRender.args = {
   ...Demo.defaultProps

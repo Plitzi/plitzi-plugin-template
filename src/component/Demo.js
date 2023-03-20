@@ -2,30 +2,33 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import usePlitziServiceContext from 'plitziSdkFederation/usePlitziServiceContext'; // eslint-disable-line
+import { RootElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
 
 // Styles
 import './Assets/index.scss';
 
 const Demo = forwardRef((props, ref) => {
   const { className, internalProps, content } = props;
-  const { style } = internalProps;
   const {
     settings: { previewMode }
   } = usePlitziServiceContext();
 
   if (!previewMode) {
     return (
-      <div ref={ref} style={style} className={classNames('plitzi-component__demo text-red-500', className)}>
+      <RootElement
+        ref={ref}
+        internalProps={internalProps}
+        className={classNames('plitzi-component__demo text-red-500', className)}
+      >
         Hi, this is a Plitzi demo component Preview Mode False
-      </div>
+      </RootElement>
     );
   }
 
   return (
-    <div ref={ref} style={style} className={classNames('plitzi-component__demo', className)}>
+    <RootElement ref={ref} internalProps={internalProps} className={classNames('plitzi-component__demo', className)}>
       {content}
-    </div>
+    </RootElement>
   );
 });
 
