@@ -15,6 +15,7 @@
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
     "@plitzi/plitzi-sdk": "^0.6.21",
+    "@plitzi/plitzi-ui": "^0.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

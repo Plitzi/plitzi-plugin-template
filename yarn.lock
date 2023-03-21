@@ -2072,6 +2072,22 @@
     react-router-dom "^6.8.1"
     tinycolor2 "^1.6.0"
 
+"@plitzi/plitzi-ui@^0.0.3":
+  version "0.0.3"
+  resolved "https://npm.pkg.github.com/download/@plitzi/plitzi-ui/0.0.3/b9d4301f7506f35fc242c069be56aa1afb6efcc6#b9d4301f7506f35fc242c069be56aa1afb6efcc6"
+  integrity sha512-fwsa36rOEjI9akCdNOtibkWnuEmHOccJoK6AtgsQ3NzDZjjYDmYY42IQGX+E+nkv1OqmLJkIaXrYDjFOHoaBUw==
+  dependencies:
+    axios "^1.1.3"
+    classnames "^2.3.2"
+    lodash "^4.17.21"
+    moment "^2.29.4"
+    react "^18.2.0"
+    react-color "^2.19.3"
+    react-dom "^18.2.0"
+    react-moment "^1.1.2"
+    react-router-dom "^6.4.3"
+    tinycolor2 "^1.4.2"
+
 "@plitzi/plitzi-webpack@^0.1.17":
   version "0.1.17"
   resolved "https://npm.pkg.github.com/download/@Plitzi/plitzi-webpack/0.1.17/7206dc076ca67f3e49220ea259709e10172f9ca9#7206dc076ca67f3e49220ea259709e10172f9ca9"
@@ -4699,7 +4715,7 @@ axe-core@^4.6.2:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.6.3.tgz#fc0db6fdb65cc7a80ccf85286d91d64ababa3ece"
   integrity sha512-/BQzOX780JhsxDnPpH4ZiyrJAzcd8AfzFPkv+89veFSr1rcMjuq2JDCwypKaPeB6ljHp9KjXhPpjgCvQlWYuqg==
 
-axios@^1.3.2, axios@^1.3.4:
+axios@^1.1.3, axios@^1.3.2, axios@^1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.4.tgz#f5760cefd9cfb51fd2481acf88c05f67c4523024"
   integrity sha512-toYm+Bsyl6VC5wSkfkbbNB6ROv7KY93PEBBL6xyDczaIHasAiv4wPqQ/c4RjoQzipxRD2W5g21cOqQulZ7rHwQ==
@@ -9117,11 +9133,6 @@ is-extglob@^2.1.0, is-extglob@^2.1.1:
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
   integrity sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==
 
-is-finite@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/is-finite/-/is-finite-1.1.0.tgz#904135c77fb42c0641d6aa1bcdbc4daa8da082f3"
-  integrity sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==
-
 is-fullwidth-code-point@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
@@ -13399,7 +13410,7 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-moment@^1.1.3:
+react-moment@^1.1.2, react-moment@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-1.1.3.tgz#829b21dfb279aa6db47ce4f1ac2555af17a1bcdc"
   integrity sha512-8EPvlUL8u6EknPp1ISF5MQ3wx2OHJVXIP/iZc4wRh3iV3XozftZERDv9ANZeAtMlhNNQHdFoqcZHFUkBSTONfA==
@@ -13414,7 +13425,7 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react-router-dom@^6.8.1, react-router-dom@^6.9.0:
+react-router-dom@^6.4.3, react-router-dom@^6.8.1, react-router-dom@^6.9.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.9.0.tgz#dd8b4e461453bd4cad2e6404493d1a5b4bfea758"
   integrity sha512-/seUAPY01VAuwkGyVBPCn1OXfVbaWGGu4QN9uj0kCPcTyNYgL1ldZpxZUpRU7BLheKQI4Twtl/OW2nHRF1u26Q==
@@ -15279,7 +15290,7 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tinycolor2@^1.4.1, tinycolor2@^1.6.0:
+tinycolor2@^1.4.1, tinycolor2@^1.4.2, tinycolor2@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.6.0.tgz#f98007460169b0263b97072c5ae92484ce02d09e"
   integrity sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==
