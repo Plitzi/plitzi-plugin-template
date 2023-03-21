@@ -16,7 +16,7 @@ const Settings = props => {
       </div>
       <div className="flex flex-col px-4 py-2">
         <label>Content</label>
-        <Input value={content} onChange={handleChange('content')} inputClassName="rounded w-full" />
+        <Input value={content} onChange={handleChange('content')} inputClassName="rounded" />
       </div>
     </div>
   );
