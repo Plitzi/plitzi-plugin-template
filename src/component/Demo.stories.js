@@ -3,8 +3,8 @@ import React, { useRef, useState } from 'react';
 import PlitziSdk, { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 
 // Relatives
-import Demo from '../src/component';
-import Settings from '../src/component/Settings';
+import Demo from './Demo';
+import Settings from './Settings';
 
 export default {
   title: 'Example/Demo',
@@ -53,7 +53,7 @@ const schema = {
   pages: ['5f544375ced80ed16f382b7b']
 };
 
-export const withHoc = () => (
+export const WithHoc = () => (
   <PlitziSdk offlineMode offlineData={{ schema }}>
     <PlitziSdk.Plugin
       renderType="demo"
@@ -69,7 +69,7 @@ export const withHoc = () => (
   </PlitziSdk>
 );
 
-export const withHocNoPreview = () => (
+export const WithHocNoPreview = () => (
   <PlitziSdk offlineMode offlineData={{ schema }} previewMode={false}>
     <PlitziSdk.Plugin
       renderType="demo"
@@ -85,27 +85,31 @@ export const withHocNoPreview = () => (
   </PlitziSdk>
 );
 
-export const withHocNoIframe = () => (
+export const WithHocNoIframe = () => (
   <PlitziSdk offlineMode renderMode="raw" offlineData={{ schema }}>
     <PlitziSdk.Plugin renderType="demo" component={Demo} />
   </PlitziSdk>
 );
 
-export const componentRender = () => {
+export const ComponentRender = () => {
   const ref = useRef();
 
   return (
-    <PlitziServiceProvider value={{ settings: { previewMode: true } }}>
+    <PlitziServiceProvider
+      value={{
+        settings: { previewMode: true }
+      }}
+    >
       <Demo ref={ref} />
     </PlitziServiceProvider>
   );
 };
 
-componentRender.args = {
+ComponentRender.args = {
   ...Demo.defaultProps
 };
 
-export const componentSettings = args => {
+export const ComponentSettings = args => {
   const [props, setProps] = useState({});
 
   const onUpdate = (key, value) => {
@@ -115,6 +119,6 @@ export const componentSettings = args => {
   return <Settings {...args} {...props} onUpdate={onUpdate} />;
 };
 
-componentSettings.args = {
+ComponentSettings.args = {
   ...Settings.defaultProps
 };
