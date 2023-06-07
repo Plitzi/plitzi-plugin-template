@@ -21,7 +21,6 @@ const schema = {
   flat: {
     '5f544375ced80ed16f382b7b': {
       attributes: {
-        selectorClass: '',
         name: 'Home'
       },
       builder: {
@@ -32,21 +31,26 @@ const schema = {
         label: 'Page',
         type: 'page',
         slug: '',
-        items: ['5f47e7ca8294097d8b0a1715']
+        items: ['5f47e7ca8294097d8b0a1715'],
+        styleSelectors: {
+          base: ''
+        }
       },
       id: '5f544375ced80ed16f382b7b'
     },
     '5f47e7ca8294097d8b0a1715': {
       id: '5f47e7ca8294097d8b0a1715',
       attributes: {
-        selectorClass: '',
         content: 'Testing'
       },
       definition: {
         label: 'Demo',
         type: 'demo',
         description: '',
-        parentId: '5f544375ced80ed16f382b7b'
+        parentId: '5f544375ced80ed16f382b7b',
+        styleSelectors: {
+          base: ''
+        }
       }
     }
   },
