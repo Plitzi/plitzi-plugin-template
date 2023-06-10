@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const PlitziPlugin = require('@plitzi/plitzi-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-
+const pluginSchema = require('./src/component/pluginSchema.json');
 const PACKAGE = require('./package.json');
 
 const DESTINATION = path.resolve(__dirname, './dist/');
@@ -42,6 +42,10 @@ const build = (env, args) => {
       historyApiFallback: true,
       static: {
         directory: path.join(__dirname, 'dist')
+      },
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
       },
       port: 3999
     },
@@ -107,6 +111,7 @@ const build = (env, args) => {
           created: '',
           updated: '',
           pluginVersion: PACKAGE.version,
+          pluginSchema,
           assets
         })
       }),
