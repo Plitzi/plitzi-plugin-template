@@ -12,7 +12,6 @@
     "builder": {
       "canDelete": true,
       "canSelect": true,
-      "canZoom": false,
       "canDragDrop": true,
       "canMove": true,
       "canTemplate": true,
