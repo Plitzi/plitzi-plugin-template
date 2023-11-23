@@ -7,7 +7,7 @@ import Input from '@plitzi/plitzi-ui/Input';
 const Settings = props => {
   const { content, onUpdate } = props;
 
-  const handleChangeContent = useCallback(e => onUpdate(e.target.value), []);
+  const handleChangeContent = useCallback(e => onUpdate('content', e.target.value), [onUpdate]);
 
   return (
     <div className="flex flex-col">
