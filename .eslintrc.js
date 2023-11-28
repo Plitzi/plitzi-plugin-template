@@ -52,11 +52,14 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'no-param-reassign': 0,
     'no-console': 0,
-    'max-len': [2, {
-      code: 120,
-      ignoreTemplateLiterals: true,
-      ignoreStrings: true
-    }],
+    'max-len': [
+      2,
+      {
+        code: 120,
+        ignoreTemplateLiterals: true,
+        ignoreStrings: true
+      }
+    ],
     'jsx-a11y/control-has-associated-label': 0,
     'react/no-unused-prop-types': 0,
     'react/jsx-one-expression-per-line': 0,
