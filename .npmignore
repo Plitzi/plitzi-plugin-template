@@ -17,3 +17,5 @@ public
 .stylelintrc
 index.hbs
 webpack.config.*
+.yarnrc.yml
+.yarn
