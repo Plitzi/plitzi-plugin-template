@@ -110,9 +110,15 @@ const build = (env, args) => {
           author: 'Carlos Rodriguez <crodriguez@plitzi.com>',
           created: new Date().toLocaleDateString(),
           updated: new Date().toLocaleDateString(),
-          version: PACKAGE.version,
+          version: `v${PACKAGE.version}`,
+          root: PluginName,
+          runtime: {
+            scope: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
+            module: 'Plugin'
+          },
           definition: {
             name: "Plitzi's Demo Plugin",
+            description: '',
             owner: 'Plitzi',
             verified: true,
             license: 'MIT',
@@ -121,7 +127,16 @@ const build = (env, args) => {
             icon: 'https://cdn.plitzi.com/resources/img/favicon.svg'
           },
           pluginSchema,
-          assets
+          assets: Object.values(assets).reduce((acum, asset) => {
+            return {
+              ...acum,
+              [asset.src]: {
+                ...asset,
+                type: asset.src.endsWith('.js') ? 'script' : 'style',
+                srcPath: `/plitzi-plugin-${PluginName}/${asset.src}`
+              }
+            };
+          }, {})
         })
       }),
       new CompressionPlugin({
@@ -153,7 +168,7 @@ const build = (env, args) => {
       new FileManagerPlugin({
         events: {
           onEnd: {
-            archive: [{ source: './dist', destination: `./dist/plitzi-plugin-${PluginName}-v${PACKAGE.version}.zip` }]
+            archive: [{ source: './dist', destination: `./dist/plitzi-plugin-${PluginName}.zip` }]
           }
         }
       })
