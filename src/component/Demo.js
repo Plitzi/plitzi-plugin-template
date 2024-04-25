@@ -8,7 +8,7 @@ import { RootElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
 import './Assets/index.scss';
 
 const Demo = forwardRef((props, ref) => {
-  const { className, internalProps, content } = props;
+  const { className = '', internalProps, content = 'Demo Component' } = props;
   const {
     settings: { previewMode }
   } = usePlitziServiceContext();
@@ -31,12 +31,6 @@ const Demo = forwardRef((props, ref) => {
     </RootElement>
   );
 });
-
-Demo.defaultProps = {
-  className: '',
-  internalProps: {},
-  content: 'Demo Component'
-};
 
 Demo.propTypes = {
   className: PropTypes.string,

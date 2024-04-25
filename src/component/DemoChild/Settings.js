@@ -5,7 +5,7 @@ import noop from 'lodash/noop';
 import Input from '@plitzi/plitzi-ui/Input';
 
 const Settings = props => {
-  const { content, onUpdate } = props;
+  const { content = '', onUpdate = noop } = props;
 
   const handleChangeContent = useCallback(e => onUpdate('content', e.target.value), [onUpdate]);
 
@@ -20,11 +20,6 @@ const Settings = props => {
       </div>
     </div>
   );
-};
-
-Settings.defaultProps = {
-  content: '',
-  onUpdate: noop
 };
 
 Settings.propTypes = {

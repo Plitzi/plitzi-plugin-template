@@ -39,6 +39,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'react/require-default-props': 0,
     'no-alert': 0,
     'no-unused-vars': 1,
     'no-shadow': 0,

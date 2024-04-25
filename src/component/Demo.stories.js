@@ -1,5 +1,6 @@
 // Packages
 import React, { useRef, useState } from 'react';
+import noop from 'lodash/noop';
 import PlitziSdk, { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 
 // Relatives
@@ -110,7 +111,9 @@ export const ComponentRender = () => {
 };
 
 ComponentRender.args = {
-  ...Demo.defaultProps
+  className: '',
+  internalProps: {},
+  content: 'Demo Component'
 };
 
 export const ComponentSettings = args => {
@@ -124,5 +127,6 @@ export const ComponentSettings = args => {
 };
 
 ComponentSettings.args = {
-  ...Settings.defaultProps
+  content: '',
+  onUpdate: noop
 };
