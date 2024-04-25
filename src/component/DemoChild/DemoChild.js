@@ -7,8 +7,10 @@ import { RootElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
 // Styles
 import '../Assets/index.scss';
 
+const emptyObject = {};
+
 const DemoChild = forwardRef((props, ref) => {
-  const { className = '', internalProps, content = 'Demo Child Component' } = props;
+  const { className = '', internalProps = emptyObject, content = 'Demo Child Component' } = props;
   const {
     settings: { previewMode }
   } = usePlitziServiceContext();
