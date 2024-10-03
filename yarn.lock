@@ -4167,8 +4167,8 @@ __metadata:
     postcss-scss: ^4.0.9
     prettier: ^3.3.3
     prettier-plugin-jsdoc: ^1.3.0
-    react: 19.0.0-rc-fb9a90fa48-20240614
-    react-dom: 19.0.0-rc-fb9a90fa48-20240614
+    react: 19.0.0-rc-3edc000d-20240926
+    react-dom: 19.0.0-rc-3edc000d-20240926
     react-is: ^18.3.1
     react-refresh: ^0.14.2
     sass-loader: ^16.0.2
@@ -15822,17 +15822,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.0.0-rc-fb9a90fa48-20240614":
-  version: 19.0.0-rc-fb9a90fa48-20240614
-  resolution: "react-dom@npm:19.0.0-rc-fb9a90fa48-20240614"
-  dependencies:
-    scheduler: 0.25.0-rc-fb9a90fa48-20240614
-  peerDependencies:
-    react: 19.0.0-rc-fb9a90fa48-20240614
-  checksum: 6da2fc33dc231b2f3516417a8d4c30d805d837460121b9c47ef37472119f1cd4f1b14f426cba1a37961eb00f6941d663fbc7e8d2e30d17de34a296539db26b7a
-  languageName: node
-  linkType: hard
-
 "react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -16028,13 +16017,6 @@ __metadata:
   version: 19.0.0-rc-3edc000d-20240926
   resolution: "react@npm:19.0.0-rc-3edc000d-20240926"
   checksum: 57f655e2a6167d5aadd49e4504c6db61cc3db2cd09f3a8912a40e023b70cfb5c18a7a065f8e3797c9b8b85e8672b27c3a5d05151550bfef6b8616e195c2dbb59
-  languageName: node
-  linkType: hard
-
-"react@npm:19.0.0-rc-fb9a90fa48-20240614":
-  version: 19.0.0-rc-fb9a90fa48-20240614
-  resolution: "react@npm:19.0.0-rc-fb9a90fa48-20240614"
-  checksum: 04647b2f1472f525f6bc1619b420e17bdc091b39f164ec1013c7fcc2232f759579449f34bc60bb5f8b8dfc5f791408f1fae8eb03ec5d901b5d7e2e081f0b71e1
   languageName: node
   linkType: hard
 
@@ -16732,13 +16714,6 @@ __metadata:
   version: 0.25.0-rc-3edc000d-20240926
   resolution: "scheduler@npm:0.25.0-rc-3edc000d-20240926"
   checksum: 641f00dfac7c8e7256771c634cc929e597c7de17b4dee2d803492a485c3ad17abfeff15916f5a03b364875eeb509f07a8763b7194aa69a284a8e2844c77202d3
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:0.25.0-rc-fb9a90fa48-20240614":
-  version: 0.25.0-rc-fb9a90fa48-20240614
-  resolution: "scheduler@npm:0.25.0-rc-fb9a90fa48-20240614"
-  checksum: aa86a6e8ecdaedc6bd561be039ec7113f30b121e9788e96e7d87f7808a148075506726b139d9aa50f4881c99563f8b1df69d423b2c88aee211e0d60e6a8dc4d3
   languageName: node
   linkType: hard
 

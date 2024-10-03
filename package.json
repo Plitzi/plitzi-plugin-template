@@ -16,8 +16,8 @@
   "dependencies": {
     "@plitzi/plitzi-sdk": "^0.22.12",
     "@plitzi/plitzi-ui": "^0.0.3",
-    "react": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-dom": "19.0.0-rc-fb9a90fa48-20240614"
+    "react": "19.0.0-rc-3edc000d-20240926",
+    "react-dom": "19.0.0-rc-3edc000d-20240926"
   },
   "devDependencies": {
     "@babel/compat-data": "^7.25.7",
