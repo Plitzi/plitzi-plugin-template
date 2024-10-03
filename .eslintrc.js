@@ -37,9 +37,15 @@ module.exports = {
       }
     }
   },
-  plugins: ['react'],
+  plugins: ['react', 'jsdoc'],
   rules: {
+    'jsdoc/require-description': 0,
+    'jsdoc/require-param': 1,
+    'jsdoc/require-jsdoc': 0, // [1, { require: { FunctionExpression: true, ClassDeclaration: true } }],
+    'jsdoc/require-returns-description': 0,
+    'jsdoc/require-param-description': 0,
     'react/require-default-props': 0,
+    'react/prop-types': 0, // deprecated, checking if can support jsdoc instead
     'no-alert': 0,
     'no-unused-vars': 1,
     'no-shadow': 0,

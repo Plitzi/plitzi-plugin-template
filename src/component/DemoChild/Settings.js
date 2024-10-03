@@ -1,9 +1,15 @@
 // Packages
 import React, { useCallback } from 'react';
-import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
-import Input from '@plitzi/plitzi-ui/Input';
+// import Input from '@plitzi/plitzi-ui/Input';
 
+/**
+ * @param {{
+ *   content?: string;
+ *   onUpdate?: (key: string, value: string) => void;
+ * }} props
+ * @returns {React.ReactElement}
+ */
 const Settings = props => {
   const { content = '', onUpdate = noop } = props;
 
@@ -16,15 +22,10 @@ const Settings = props => {
       </div>
       <div className="flex flex-col w-full px-4 py-2">
         <label>Content</label>
-        <Input value={content} onChange={handleChangeContent} inputClassName="rounded" />
+        <input value={content} onChange={handleChangeContent} className="rounded" />
       </div>
     </div>
   );
-};
-
-Settings.propTypes = {
-  content: PropTypes.string,
-  onUpdate: PropTypes.func
 };
 
 export default Settings;

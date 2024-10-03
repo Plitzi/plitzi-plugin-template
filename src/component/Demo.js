@@ -1,6 +1,5 @@
 // Packages
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import classNames from 'classnames';
 import { RootElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
 
@@ -9,8 +8,16 @@ import './Assets/index.scss';
 
 const emptyObject = {};
 
-const Demo = forwardRef((props, ref) => {
-  const { className = '', internalProps = emptyObject, content = 'Demo Component' } = props;
+/**
+ * @param {{
+ *   className?: string;
+ *   internalProps?: Record<string, unknown>;
+ *   content?: string;
+ * }} props
+ * @returns {React.ReactElement}
+ */
+const Demo = props => {
+  const { ref, className = '', internalProps = emptyObject, content = 'Demo Component' } = props;
   const {
     settings: { previewMode }
   } = usePlitziServiceContext();
@@ -32,12 +39,6 @@ const Demo = forwardRef((props, ref) => {
       {content}
     </RootElement>
   );
-});
-
-Demo.propTypes = {
-  className: PropTypes.string,
-  internalProps: PropTypes.object,
-  content: PropTypes.string
 };
 
 export default Demo;
