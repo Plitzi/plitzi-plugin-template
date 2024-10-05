@@ -35,6 +35,7 @@ const build = (env, args) => {
       publicPath: 'auto'
     },
     watch,
+    externals: ['react', 'react-dom', '@plitzi/plitzi-sdk'],
     devServer: {
       allowedHosts: 'all',
       compress: false,
