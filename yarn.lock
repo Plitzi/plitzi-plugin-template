@@ -4123,9 +4123,9 @@ __metadata:
     "@babel/preset-env": ^7.25.7
     "@babel/preset-react": ^7.25.7
     "@plitzi/plitzi-cli": ^0.0.2
-    "@plitzi/plitzi-sdk": ^0.22.17
+    "@plitzi/plitzi-sdk": ^0.22.18
     "@plitzi/plitzi-ui": ^0.0.3
-    "@plitzi/plitzi-webpack": ^0.3.1
+    "@plitzi/plitzi-webpack": ^0.3.2
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.15
     "@storybook/addon-essentials": ^8.3.5
     "@storybook/addon-interactions": ^8.3.5
@@ -4189,9 +4189,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@plitzi/plitzi-sdk@npm:^0.22.17":
-  version: 0.22.17
-  resolution: "@plitzi/plitzi-sdk@npm:0.22.17::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40Plitzi%2Fplitzi-sdk%2F0.22.17%2F0c8eaebb116aba4ad9c5f7e9c0d1022e20230a47"
+"@plitzi/plitzi-sdk@npm:^0.22.18":
+  version: 0.22.18
+  resolution: "@plitzi/plitzi-sdk@npm:0.22.18::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40Plitzi%2Fplitzi-sdk%2F0.22.18%2Fb6b1ab6bd46ee640ca3cf1ef9f1932bb95c65bb5"
   dependencies:
     "@apollo/client": ^3.11.8
     "@auth0/auth0-react": ^2.2.4
@@ -4215,7 +4215,7 @@ __metadata:
     react-helmet-async: ^2.0.5
     react-router-dom: ^6.26.2
     twig: ^1.17.1
-  checksum: 0eb8b81dac34a373c1c739efa050dbeec6b4294d36d57698022f8151b702706e81abc023450932f651b6419adbe1c3f502022fbf1d0445a5feff4c3d6279f4ea
+  checksum: bd474d40ecc65172371dec2241b9560072cf37d863607174daa4a0ec66a813d22a8b2ad777aa272af96c9a307923917744d2c27c2e58b7c6f3f8cf37369185b3
   languageName: node
   linkType: hard
 
@@ -4237,10 +4237,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plitzi/plitzi-webpack@npm:^0.3.1":
-  version: 0.3.1
-  resolution: "@plitzi/plitzi-webpack@npm:0.3.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40Plitzi%2Fplitzi-webpack%2F0.3.1%2Fa2dd70a3eeeaf2fc10167cf465b85a0f8f224c59"
-  checksum: 871e7648ed41e3de0f092d3c510334218e477e46516e22f5607e4fa39e9abe82b784ae88889c53d0cd4fe45f520a048435aa4cb00eb52c77a4876469ce44a582
+"@plitzi/plitzi-webpack@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@plitzi/plitzi-webpack@npm:0.3.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40Plitzi%2Fplitzi-webpack%2F0.3.2%2F7cc4169c37fc46b4aed706fdf4a5407f6103cb13"
+  checksum: 6c61cc17dafbd14aa239952338b9d44024dd1cfa4eee95d1e0fb325af2f73da730ec7518ac728dba1379a4a5791d39f7a9fff16faee4f927d7d50f7cce38c477
   languageName: node
   linkType: hard
 

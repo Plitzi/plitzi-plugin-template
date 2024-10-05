@@ -1,6 +1,6 @@
 {
   "name": "@plitzi/plitzi-plugin-template",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   },
   "main": "dist/plitzi-plugin-template.js",
   "dependencies": {
-    "@plitzi/plitzi-sdk": "^0.22.17",
+    "@plitzi/plitzi-sdk": "^0.22.18",
     "@plitzi/plitzi-ui": "^0.0.3",
     "react": "19.0.0-rc-3edc000d-20240926",
     "react-dom": "19.0.0-rc-3edc000d-20240926"
@@ -32,7 +32,7 @@
     "@babel/preset-env": "^7.25.7",
     "@babel/preset-react": "^7.25.7",
     "@plitzi/plitzi-cli": "^0.0.2",
-    "@plitzi/plitzi-webpack": "^0.3.1",
+    "@plitzi/plitzi-webpack": "^0.3.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/addon-interactions": "^8.3.5",
