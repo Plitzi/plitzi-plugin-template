@@ -1,7 +1,6 @@
 // Packages
 import React, { useCallback } from 'react';
 import noop from 'lodash/noop';
-// import Input from '@plitzi/plitzi-ui/Input';
 
 /**
  * @param {{
