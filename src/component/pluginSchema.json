@@ -18,13 +18,6 @@
       "itemsAllowed": [],
       "itemsNotAllowed": []
     },
-    "bindingsAllowed": {
-      "attributes": [{ "path": "content", "label": "Content" }],
-      "initialState": [
-        { "path": "visibility", "label": "Visibility" },
-        { "path": "styleSelectors.base", "label": "Selector - Base" }
-      ]
-    },
     "defaultStyle": {
       "name": "Demo",
       "displayMode": "desktop",
@@ -51,14 +44,6 @@
       "canTemplate": true,
       "itemsAllowed": [],
       "itemsNotAllowed": []
-    },
-    "bindingsAllowed": {
-      "attributes": [{ "path": "content", "label": "Content" }],
-      "style": [],
-      "initialState": [
-        { "path": "visibility", "label": "Visibility" },
-        { "path": "styleSelectors.base", "label": "Selector - Base" }
-      ]
     },
     "defaultStyle": {
       "name": "Demo Child",
