@@ -1,4 +1,3 @@
-// Relatives
 import Demo from './Demo';
 import DemoChild from './DemoChild';
 import Settings from './Settings';

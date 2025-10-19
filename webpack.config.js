@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const WebpackAssetsManifest = require('webpack-assets-manifest');
+const { WebpackAssetsManifest } = require('webpack-assets-manifest');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
@@ -19,11 +19,12 @@ const PluginName = 'demo';
 const build = (env, args) => {
   const devMode = args.mode !== 'production';
   const onlyGzip = env.onlyGzip || false;
+  const asZip = env.asZip || false;
   const onlyAnalyze = env.onlyAnalyze || false;
   const watch = env.watch || false;
 
   const modules = {
-    entry: { [PluginName]: './src/component/index.js' },
+    entry: { [PluginName]: './src/component/index' },
     output: {
       path: DESTINATION,
       library: `PlitziPlugin${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)}`,
@@ -35,7 +36,27 @@ const build = (env, args) => {
       publicPath: 'auto'
     },
     watch,
-    externals: ['react', 'react-dom', '@plitzi/plitzi-sdk'],
+    resolve: {
+      // symlinks: devMode,
+      extensions: ['.js', '.mjs', '.es', '.cjs', '.ts', '.tsx'],
+      alias: {}
+    },
+    externals: [
+      {
+        react: 'react',
+        'react-dom': 'react-dom',
+        'react/jsx-runtime': 'react/jsx-runtime',
+        '@plitzi/plitzi-sdk': '@plitzi/plitzi-sdk'
+      },
+      // @plitzi/plitzi-ui and all submodules
+      function ({ request }, callback) {
+        if (request && /^@plitzi\/plitzi-ui(\/.*)?$/.test(request)) {
+          return callback(null, request);
+        }
+
+        callback(); // Normal
+      }
+    ],
     devServer: {
       allowedHosts: 'all',
       compress: false,
@@ -85,7 +106,9 @@ const build = (env, args) => {
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: devMode
+                implementation: require('sass-embedded'),
+                sourceMap: devMode,
+                sassOptions: { quietDeps: true }
               }
             }
           ],
@@ -94,7 +117,7 @@ const build = (env, args) => {
       ]
     },
     plugins: [
-      new PlitziPlugin({ isPlugin: true }),
+      asZip ? new PlitziPlugin({ isPlugin: true }) : false,
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(PACKAGE.version)
       }),
@@ -134,7 +157,8 @@ const build = (env, args) => {
               [asset.src]: {
                 ...asset,
                 type: asset.src.endsWith('.js') ? 'script' : 'style',
-                srcPath: `/plitzi-plugin-${PluginName}/${asset.src}`
+                srcPath: `/plitzi-plugin-${PluginName}/${asset.src}`,
+                isMain: true
               }
             };
           }, {})
@@ -164,16 +188,19 @@ const build = (env, args) => {
   if (devMode) {
     modules.devtool = 'source-map';
   } else {
-    modules.plugins.push(
-      new CleanWebpackPlugin(),
-      new FileManagerPlugin({
-        events: {
-          onEnd: {
-            archive: [{ source: './dist', destination: `./dist/plitzi-plugin-${PluginName}.zip` }]
+    modules.plugins.push(new CleanWebpackPlugin());
+    if (asZip) {
+      modules.plugins.push(
+        new FileManagerPlugin({
+          events: {
+            onEnd: {
+              archive: [{ source: './dist', destination: `./dist/plitzi-plugin-${PluginName}.zip` }]
+            }
           }
-        }
-      })
-    );
+        })
+      );
+    }
+
     modules.optimization = {
       minimize: true,
       minimizer: [

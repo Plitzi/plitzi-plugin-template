@@ -1,5 +1,3 @@
-// Packages
-import path from 'node:path';
 import js from '@eslint/js';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -11,11 +9,6 @@ import cypress from 'eslint-plugin-cypress';
 import jest from 'eslint-plugin-jest';
 import plugin from 'eslint-plugin-import';
 import globals from 'globals';
-
-const GLOBALS_BROWSER_FIX = Object.assign({}, globals.browser, {
-  AudioWorkletGlobalScope: globals.browser['AudioWorkletGlobalScope ']
-});
-delete GLOBALS_BROWSER_FIX['AudioWorkletGlobalScope '];
 
 export default [
   js.configs.recommended,
@@ -60,7 +53,6 @@ export default [
         }
       },
       globals: {
-        ...GLOBALS_BROWSER_FIX,
         ...globals.jest,
         ...globals.node,
         Atomics: 'readonly',
