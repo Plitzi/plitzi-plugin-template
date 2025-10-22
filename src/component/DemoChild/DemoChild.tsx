@@ -1,23 +1,23 @@
-// Packages
-import React from 'react';
-import classNames from 'classnames';
-import { RootElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-// Styles
+// eslint-disable-next-line
+// @ts-ignore
+import { RootElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
+import classNames from 'classnames';
+
 import '../Assets/index.scss';
 
-const emptyObject = {};
+import type { RefObject } from 'react';
 
-/**
- * @param {{
- *   className?: string;
- *   internalProps?: Record<string, unknown>;
- *   content?: string;
- * }} props
- * @returns {React.ReactElement}
- */
-const DemoChild = props => {
-  const { ref, className = '', internalProps = emptyObject, content = 'Demo Child Component' } = props;
+export type DemoChildProps = {
+  ref?: RefObject<HTMLDivElement | null>;
+  className?: string;
+  internalProps?: Record<string, unknown>;
+  content?: string;
+};
+
+const DemoChild = ({ ref, className = '', internalProps, content = 'Demo Child Component' }: DemoChildProps) => {
   const {
     settings: { previewMode }
   } = usePlitziServiceContext();

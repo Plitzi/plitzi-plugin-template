@@ -1,18 +1,17 @@
-// Packages
-import React, { useCallback } from 'react';
-import noop from 'lodash/noop';
+import { useCallback } from 'react';
 
-/**
- * @param {{
- *   content?: string;
- *   onUpdate?: (key: string, value: string) => void;
- * }} props
- * @returns {React.ReactElement}
- */
-const Settings = props => {
-  const { content = '', onUpdate = noop } = props;
+import type { ChangeEvent } from 'react';
 
-  const handleChangeContent = useCallback(e => onUpdate('content', e.target.value), [onUpdate]);
+export type SettingsProps = {
+  content?: string;
+  onUpdate?: (key: string, value: string) => void;
+};
+
+const Settings = ({ content = '', onUpdate }: SettingsProps) => {
+  const handleChangeContent = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => onUpdate?.('content', e.target.value),
+    [onUpdate]
+  );
 
   return (
     <div className="flex flex-col">
