@@ -127,11 +127,9 @@ jobs:
       - name: Yarn Build
         run: yarn build:prod
 
-      - name: Setup .yarnrc.yml
+      - name: Yarn Token
         run: |
-          yarn config set npmScopes.plitzi.npmRegistryServer "https://npm.pkg.github.com"
-          yarn config set npmScopes.plitzi.npmAlwaysAuth true
-          yarn config set npmScopes.plitzi.npmAuthToken $NPM_AUTH_TOKEN
+          echo "npmAuthToken: ${{ secrets.NPM_AUTH_TOKEN }}" >> $HOME/.yarnrc.yml
         env:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
