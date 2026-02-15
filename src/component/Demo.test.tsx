@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // eslint-disable-next-line
 // @ts-ignore
 import { PlitziServiceProvider } from '@plitzi/plitzi-sdk';

@@ -1,6 +1,5 @@
+import { Input } from '@plitzi/plitzi-ui';
 import { useCallback } from 'react';
-
-import type { ChangeEvent } from 'react';
 
 export type SettingsProps = {
   content?: string;
@@ -8,10 +7,7 @@ export type SettingsProps = {
 };
 
 const Settings = ({ content = '', onUpdate }: SettingsProps) => {
-  const handleChangeContent = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => onUpdate?.('content', e.target.value),
-    [onUpdate]
-  );
+  const handleChangeContent = useCallback((value: string) => onUpdate?.('content', value), [onUpdate]);
 
   return (
     <div className="flex flex-col">
@@ -19,8 +15,7 @@ const Settings = ({ content = '', onUpdate }: SettingsProps) => {
         <h1 className="text-white m-0">Demo Settings</h1>
       </div>
       <div className="flex flex-col w-full px-4 py-2">
-        <label>Content</label>
-        <input value={content} onChange={handleChangeContent} className="rounded" />
+        <Input id="content" label="Content" value={content} onChange={handleChangeContent} />
       </div>
     </div>
   );

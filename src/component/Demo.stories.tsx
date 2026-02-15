@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 // @ts-ignore
-import PlitziSdk, { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
+import PlitziSdk, { PlitziServiceProvider, ElementContext } from '@plitzi/plitzi-sdk';
+import { Provider } from '@plitzi/plitzi-ui';
 import { useRef, useState } from 'react';
 
 import Demo from './Demo';
@@ -25,7 +26,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { internalProps: { plitziJsxSkipHOC: true } },
+  args: {},
   render: function Render(args) {
     const ref = useRef<HTMLDivElement>(null);
 
@@ -35,7 +36,9 @@ export const Primary: Story = {
           settings: { previewMode: true }
         }}
       >
-        <Demo ref={ref} {...args} />
+        <ElementContext value={{ id: '', rootId: '', plitziJsxSkipHOC: true }}>
+          <Demo ref={ref} {...args} />
+        </ElementContext>
       </PlitziServiceProvider>
     );
   }
@@ -129,6 +132,10 @@ export const ComponentSettings: Story = {
       setProps(state => ({ ...state, [key]: value }));
     };
 
-    return <Settings {...args} {...props} onUpdate={onUpdate} />;
+    return (
+      <Provider>
+        <Settings {...args} {...props} onUpdate={onUpdate} />
+      </Provider>
+    );
   }
 };

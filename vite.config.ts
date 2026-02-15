@@ -186,6 +186,11 @@ export default defineConfig(({ mode }) => {
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./setupTests.ts'],
+      server: {
+        deps: {
+          inline: ['@plitzi/plitzi-ui']
+        }
+      },
       coverage: {
         provider: 'v8',
         reporter: ['text'],
