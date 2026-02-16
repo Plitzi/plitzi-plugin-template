@@ -1,5 +1,5 @@
 import PlitziSdk, { PlitziServiceProvider, ElementContext } from '@plitzi/plitzi-sdk';
-import { Provider } from '@plitzi/plitzi-ui';
+import Provider from '@plitzi/plitzi-ui/Provider';
 import { useRef, useState } from 'react';
 
 import Demo from './Demo';

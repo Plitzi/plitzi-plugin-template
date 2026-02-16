@@ -2,7 +2,9 @@
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "files": [],
   "compilerOptions": {
+    "composite": true,
     "strict": true,
     "outDir": "./dist"
-  }
+  },
+  "exclude": ["dist", "node_modules", "**/dist"]
 }

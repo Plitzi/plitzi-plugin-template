@@ -23,12 +23,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      // "@icons/*": ["./src/icons/*"],
-      // "@components/*": ["./src/components/*"],
-      // "@hooks/*": ["./src/hooks/*"],
       // "@/*": ["./src/*"]
     },
     "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src", "package.json"],
+  "exclude": ["dist", "node_modules", "**/dist", "setupTests.ts"]
 }

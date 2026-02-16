@@ -1,4 +1,4 @@
-import { Input } from '@plitzi/plitzi-ui';
+import Input from '@plitzi/plitzi-ui/Input';
 import { useCallback } from 'react';
 
 export type SettingsProps = {

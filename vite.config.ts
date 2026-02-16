@@ -9,6 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { visualizer } from 'rollup-plugin-visualizer';
 import replace from '@rollup/plugin-replace';
 import { compression } from 'vite-plugin-compression2';
@@ -36,6 +37,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
+      nodeResolve({ extensions: ['.js', '.mjs', '.ts', '.tsx'] }),
       react(),
       tailwindcss(),
       dts({
@@ -126,21 +128,24 @@ export default defineConfig(({ mode }) => {
         enabled: asZip,
         withoutMainFolder: true
       }),
-      onlyAnalyze && visualizer({ filename: 'bundle-analyze.html', open: true })
+      onlyAnalyze && visualizer({ filename: './dist/stats.html', open: true })
     ],
-    resolve: {
-      alias: {
-        // '@icons': resolve(__dirname, './src/icons'),
-        // '@components': path.resolve(__dirname, './src/components'),
-        // '@hooks': path.resolve(__dirname, './src/hooks'),
-        // '@': resolve(__dirname, './src')
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true
+        }
       }
     },
+    resolve: {
+      alias: {
+        // '@': resolve(__dirname, './src')
+      },
+      extensions: ['.js', '.mjs', '.ts', '.tsx']
+    },
     build: {
-      target: 'esnext',
       outDir: 'dist',
-      sourcemap: devMode,
-      minify: !devMode,
+      ssrEmitAssets: true,
       lib: {
         entry: resolve(__dirname, './src/index.ts')
       },
@@ -151,13 +156,12 @@ export default defineConfig(({ mode }) => {
           // ESM -> .mjs
           {
             format: 'es',
-            preserveModules: false,
-            // preserveModulesRoot: 'src',
+            exports: 'named',
+            manualChunks: undefined,
             inlineDynamicImports: true, // false if u want to have chunks !devMode,
             entryFileNames: `plitzi-plugin-${PluginName}.mjs`,
             chunkFileNames: `plitzi-plugin-${PluginName}-[name].mjs`,
             assetFileNames: `plitzi-plugin-${PluginName}[extname]`,
-            exports: 'named',
             globals: {
               react: 'React',
               'react-dom': 'ReactDOM',
@@ -181,6 +185,8 @@ export default defineConfig(({ mode }) => {
           // }
         ]
       },
+      minify: !devMode,
+      sourcemap: devMode,
       emptyOutDir: true
     },
     test: {
