@@ -1,4 +1,4 @@
-import { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
+import { ElementContext, PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
@@ -17,7 +17,9 @@ describe('Demo Tests', () => {
 
     const BaseElement = render(
       <PlitziServiceProvider value={{ settings: { previewMode: true } } as PlitziServiceContextValue}>
-        <Demo ref={ref} />
+        <ElementContext value={{ id: '', rootId: '', plitziJsxSkipHOC: true }}>
+          <Demo ref={ref} />
+        </ElementContext>
       </PlitziServiceProvider>
     );
 
