@@ -1,5 +1,3 @@
-// eslint-disable-next-line
-// @ts-ignore
 import PlitziSdk, { PlitziServiceProvider, ElementContext } from '@plitzi/plitzi-sdk';
 import { Provider } from '@plitzi/plitzi-ui';
 import { useRef, useState } from 'react';
@@ -8,6 +6,7 @@ import Demo from './Demo';
 import Settings from './Settings';
 
 import type { SettingsProps } from './Settings';
+import type { PlitziServiceContextValue, OfflineDataRaw } from '@plitzi/plitzi-sdk';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -32,9 +31,11 @@ export const Primary: Story = {
 
     return (
       <PlitziServiceProvider
-        value={{
-          settings: { previewMode: true }
-        }}
+        value={
+          {
+            settings: { previewMode: true }
+          } as PlitziServiceContextValue
+        }
       >
         <ElementContext value={{ id: '', rootId: '', plitziJsxSkipHOC: true }}>
           <Demo ref={ref} {...args} />
@@ -44,9 +45,8 @@ export const Primary: Story = {
   }
 };
 
-const schema = {
+const schema: OfflineDataRaw['schema'] = {
   settings: {
-    title: 'Default',
     customCss: ''
   },
   flat: {
@@ -54,11 +54,8 @@ const schema = {
       attributes: {
         name: 'Home'
       },
-      builder: {
-        itemsAllowed: [],
-        itemsNotAllowed: []
-      },
       definition: {
+        rootId: '',
         label: 'Page',
         type: 'page',
         slug: '',
@@ -78,6 +75,7 @@ const schema = {
         label: 'Demo',
         type: 'demo',
         description: '',
+        rootId: '',
         parentId: '5f544375ced80ed16f382b7b',
         styleSelectors: {
           base: ''
@@ -85,17 +83,20 @@ const schema = {
       }
     }
   },
-  pages: ['5f544375ced80ed16f382b7b']
+  pages: ['5f544375ced80ed16f382b7b'],
+  variables: [],
+  definition: { name: 'Schema1', permanentUrl: '' },
+  pageFolders: []
 };
 
 export const WithHoc: Story = {
   args: {},
   render: () => (
-    <PlitziSdk offlineMode offlineData={{ schema, style: {} }}>
+    <PlitziSdk offlineMode offlineData={{ schema, style: {} } as OfflineDataRaw}>
       <PlitziSdk.Plugin
         renderType="demo"
         component={Demo}
-        assets={[{ type: 'text/css', href: '/main.css', rel: 'stylesheet' }]}
+        assets={[{ id: 'asset-1', type: 'link', params: { href: '/main.css', rel: 'stylesheet', type: 'text/css' } }]}
       />
     </PlitziSdk>
   )
@@ -104,11 +105,11 @@ export const WithHoc: Story = {
 export const WithHocNoPreview: Story = {
   args: {},
   render: () => (
-    <PlitziSdk className="w-full" offlineMode offlineData={{ schema, style: {} }} previewMode={false}>
+    <PlitziSdk className="w-full" offlineMode offlineData={{ schema, style: {} } as OfflineDataRaw} previewMode={false}>
       <PlitziSdk.Plugin
         renderType="demo"
         component={Demo}
-        assets={[{ type: 'text/css', href: '/main.css', rel: 'stylesheet' }]}
+        assets={[{ id: 'asset-1', type: 'link', params: { href: '/main.css', rel: 'stylesheet', type: 'text/css' } }]}
       />
     </PlitziSdk>
   )
@@ -117,7 +118,7 @@ export const WithHocNoPreview: Story = {
 export const WithHocNoIframe: Story = {
   args: {},
   render: () => (
-    <PlitziSdk className="w-full" offlineMode renderMode="raw" offlineData={{ schema, style: {} }}>
+    <PlitziSdk className="w-full" offlineMode renderMode="raw" offlineData={{ schema, style: {} } as OfflineDataRaw}>
       <PlitziSdk.Plugin renderType="demo" component={Demo} />
     </PlitziSdk>
   )

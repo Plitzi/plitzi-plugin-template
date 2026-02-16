@@ -1,8 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
-// eslint-disable-next-line
-// @ts-ignore
 import { RootElement, useElement, usePlitziServiceContext } from '@plitzi/plitzi-sdk';
 import classNames from 'classnames';
 import { useEffect } from 'react';

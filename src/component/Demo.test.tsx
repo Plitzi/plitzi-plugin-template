@@ -1,10 +1,10 @@
-// eslint-disable-next-line
-// @ts-ignore
 import { PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
 import Demo from './Demo';
+
+import type { PlitziServiceContextValue } from '@plitzi/plitzi-sdk';
 
 describe('Demo Tests', () => {
   it('Render Component', () => {
@@ -16,7 +16,7 @@ describe('Demo Tests', () => {
     const ref = { current: null };
 
     const BaseElement = render(
-      <PlitziServiceProvider value={{ settings: { previewMode: true } }}>
+      <PlitziServiceProvider value={{ settings: { previewMode: true } } as PlitziServiceContextValue}>
         <Demo ref={ref} />
       </PlitziServiceProvider>
     );

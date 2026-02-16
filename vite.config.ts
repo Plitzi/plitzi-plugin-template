@@ -153,6 +153,7 @@ export default defineConfig(({ mode }) => {
             format: 'es',
             preserveModules: false,
             // preserveModulesRoot: 'src',
+            inlineDynamicImports: true, // false if u want to have chunks !devMode,
             entryFileNames: `plitzi-plugin-${PluginName}.mjs`,
             chunkFileNames: `plitzi-plugin-${PluginName}-[name].mjs`,
             assetFileNames: `plitzi-plugin-${PluginName}[extname]`,
