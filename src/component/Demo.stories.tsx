@@ -6,7 +6,7 @@ import Demo from './Demo';
 import Settings from './Settings';
 
 import type { SettingsProps } from './Settings';
-import type { PlitziServiceContextValue, OfflineDataRaw } from '@plitzi/plitzi-sdk';
+import type { PlitziServiceContextValue, OfflineDataRaw, Schema } from '@plitzi/plitzi-sdk';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -30,13 +30,7 @@ export const Primary: Story = {
     const ref = useRef<HTMLDivElement>(null);
 
     return (
-      <PlitziServiceProvider
-        value={
-          {
-            settings: { previewMode: true }
-          } as PlitziServiceContextValue
-        }
-      >
+      <PlitziServiceProvider value={{ settings: { previewMode: true } } as PlitziServiceContextValue}>
         <ElementContext value={{ id: '', rootId: '', plitziJsxSkipHOC: true }}>
           <Demo ref={ref} {...args} />
         </ElementContext>
@@ -45,7 +39,7 @@ export const Primary: Story = {
   }
 };
 
-const schema: OfflineDataRaw['schema'] = {
+const schema: Schema = {
   settings: {
     customCss: ''
   },
@@ -55,11 +49,12 @@ const schema: OfflineDataRaw['schema'] = {
         name: 'Home'
       },
       definition: {
-        rootId: '',
         label: 'Page',
         type: 'page',
         slug: '',
         items: ['5f47e7ca8294097d8b0a1715'],
+        rootId: '5f544375ced80ed16f382b7b',
+        parentId: undefined,
         styleSelectors: {
           base: ''
         }
@@ -75,7 +70,7 @@ const schema: OfflineDataRaw['schema'] = {
         label: 'Demo',
         type: 'demo',
         description: '',
-        rootId: '',
+        rootId: '5f544375ced80ed16f382b7b',
         parentId: '5f544375ced80ed16f382b7b',
         styleSelectors: {
           base: ''

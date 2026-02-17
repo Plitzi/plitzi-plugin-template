@@ -15,7 +15,7 @@ const Settings = ({ content = '', onUpdate }: SettingsProps) => {
         <h1 className="text-white m-0">Demo Settings</h1>
       </div>
       <div className="flex flex-col w-full px-4 py-2">
-        <Input id="content" label="Content" value={content} onChange={handleChangeContent} />
+        <Input id="content" label="Content" size="xs" value={content} onChange={handleChangeContent} />
       </div>
     </div>
   );

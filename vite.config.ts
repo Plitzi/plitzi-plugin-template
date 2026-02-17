@@ -62,7 +62,7 @@ export default defineConfig(({ mode }) => {
       replace({
         preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify('production'),
-        PLUGIN_VERSION: JSON.stringify('0.0.1')
+        PLUGIN_VERSION: JSON.stringify(PACKAGE.version)
       }),
       compression({
         algorithms: ['gzip'],
@@ -104,7 +104,7 @@ export default defineConfig(({ mode }) => {
               module: 'Plugin'
             },
             definition: {
-              name: "Plitzi's Demo Plugin",
+              name: `Plitzi's ${PluginName.charAt(0).toUpperCase() + PluginName.slice(1)} Plugin`,
               description: '',
               owner: 'Plitzi',
               verified: true,
