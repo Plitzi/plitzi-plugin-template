@@ -1,5 +1,6 @@
 import { ElementContext, PlitziServiceProvider } from '@plitzi/plitzi-sdk';
 import { render } from '@testing-library/react';
+import { createContext } from 'react';
 import { describe, it, expect } from 'vitest';
 
 import Demo from './Demo';
@@ -13,11 +14,32 @@ describe('Demo Tests', () => {
     // const description = screen.getByText('Dummy Component');
     // expect(description).toBeDefined();
 
+    const InteractionsContext = createContext({
+      useInteractions: undefined,
+      interactionsManager: {
+        interactionTrigger: () => {}
+      }
+    });
+
     const ref = { current: null };
 
     const BaseElement = render(
-      <PlitziServiceProvider value={{ settings: { previewMode: true } } as PlitziServiceContextValue}>
-        <ElementContext value={{ id: '', rootId: '', plitziJsxSkipHOC: true }}>
+      <PlitziServiceProvider
+        value={
+          {
+            settings: { previewMode: true },
+            contexts: { InteractionsContext }
+          } as unknown as PlitziServiceContextValue
+        }
+      >
+        <ElementContext
+          value={{
+            id: '',
+            rootId: '',
+            plitziJsxSkipHOC: true,
+            definition: { rootId: '', type: 'demo', label: 'Demo', styleSelectors: { base: '' } }
+          }}
+        >
           <Demo ref={ref} />
         </ElementContext>
       </PlitziServiceProvider>
