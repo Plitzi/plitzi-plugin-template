@@ -1,4 +1,5 @@
 import PlitziSdk, { PlitziServiceProvider, ElementContext } from '@plitzi/plitzi-sdk';
+import { inputTheme } from '@plitzi/plitzi-ui';
 import Provider from '@plitzi/plitzi-ui/Provider';
 import { useRef, useState } from 'react';
 
@@ -129,7 +130,7 @@ export const ComponentSettings: Story = {
     };
 
     return (
-      <Provider>
+      <Provider components={{ Input: inputTheme }}>
         <Settings {...args} {...props} onUpdate={onUpdate} />
       </Provider>
     );
