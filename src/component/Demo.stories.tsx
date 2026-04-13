@@ -47,12 +47,12 @@ const schema: Schema = {
   flat: {
     '5f544375ced80ed16f382b7b': {
       attributes: {
-        name: 'Home'
+        name: 'Home',
+        slug: ''
       },
       definition: {
         label: 'Page',
         type: 'page',
-        slug: '',
         items: ['5f47e7ca8294097d8b0a1715'],
         rootId: '5f544375ced80ed16f382b7b',
         parentId: undefined,
@@ -70,7 +70,6 @@ const schema: Schema = {
       definition: {
         label: 'Demo',
         type: 'demo',
-        description: '',
         rootId: '5f544375ced80ed16f382b7b',
         parentId: '5f544375ced80ed16f382b7b',
         styleSelectors: {
