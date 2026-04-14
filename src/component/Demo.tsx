@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { use, useCallback, useEffect, useMemo } from 'react';
 
 import './Assets/index.scss';
+void import('./Assets/settings.scss');
 
 import type { InteractionCallback, InteractionCallbackParamValues } from '@plitzi/plitzi-sdk';
 import type { RefObject } from 'react';
